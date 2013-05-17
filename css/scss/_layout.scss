@@ -1,0 +1,47 @@
+
+
+// NAVIGATION
+
+nav-collapse, .nav-collapse:visited {
+display : block;
+padding : 0.4em 0 0.5em 0;
+}
+
+.nav-collapse:hover {
+text-decoration : none;
+}
+
+.open-collapse {
+@include opacity(.95);	
+}
+
+.menu {
+position: relative;
+margin : 0 0 0.5em;
+padding : 0;
+max-height : 0;
+overflow : hidden;
+@include transition(height 1s ease);
+}
+
+.no-js .menu {
+height : auto;
+}
+
+.open-menu {
+max-height : 300em;
+}
+
+// wider
+
+/*
+.nav-collapse {
+display : none;	
+}
+
+.menu {
+height : auto;
+max-height: none;
+overflow: visible;
+}
+*/
