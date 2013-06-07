@@ -17,7 +17,6 @@
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="cleartype" content="on">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 <meta property="og:title" content="<?php bloginfo( 'name' ) ?>">
 <meta property="og:description" content="">
@@ -28,16 +27,16 @@
 
 <script>
 var siteUrl = '<?php get_option('home');?>';
-var templateUrl = '<?php get_bloginfo("template_url"); ?>';
+var templateUrl = '<?php bloginfo( 'template_directory' ); ?>';
 </script>
-<script>
+
 
 <!--[if gt IE 8]><!-->
-<link rel="stylesheet" href="<?php get_bloginfo("template_url"); ?>/css/style.css">
+<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/style.css">
 <!--<![endif]-->
 	
 <!--[if lte IE 8]>
-<link rel="stylesheet" href="<?php get_bloginfo("template_url"); ?>/css/ie.css">
+<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/ie.css">
 <![endif]-->
 
 <!-- scripts -->
@@ -48,7 +47,7 @@ var templateUrl = '<?php get_bloginfo("template_url"); ?>';
 <script src="<?php bloginfo( 'template_directory' ); ?>/js/vendor/ie/selectivizr-min.js"></script>
 <![endif]-->
 
-<script src="<?php echo get_option('home');?>/quickconcat.php?files=<?php bloginfo( 'template_directory' ); ?>/js/lib/enhance.js,<?php bloginfo( 'template_directory' ); ?>/js/enhance.config.js" defer async></script>
+<script src="<?php bloginfo( 'template_directory' ); ?>/quickconcat.php?files=<?php bloginfo( 'template_directory' ); ?>/js/lib/enhance.js,<?php bloginfo( 'template_directory' ); ?>/js/enhance.config.js" defer async></script>
 
 <!-- ICONS -->
 <link rel="shortcut icon" href="/favicon.ico">
