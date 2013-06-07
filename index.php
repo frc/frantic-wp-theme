@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div class="l-content">
+	<div class="l-constrained">
 
 		<div role="main" class="l-main">
 		
@@ -28,7 +28,7 @@
 
 		
 		
-		</aside><!-- end main -->
+		</aside><!-- end complementary -->
 			
 	</div><!-- end content -->
 

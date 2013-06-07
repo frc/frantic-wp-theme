@@ -1,5 +1,5 @@
 
-	<div class="l-content">
+	<div class="l-constrained">
 
 		<footer role="contentinfo"></footer>
 

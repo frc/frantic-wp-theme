@@ -66,7 +66,7 @@ var templateUrl = '<?php bloginfo( 'template_directory' ); ?>';
 
 <div class="l-wrap">
 	
-	<div class="l-content">
+	<div class="l-constrained">
 
 		<header role="banner">
 			<h1>Framework</h1>
@@ -74,7 +74,7 @@ var templateUrl = '<?php bloginfo( 'template_directory' ); ?>';
 
 		<nav role="navigation">
 		
-			<ul class="menu">
+			<ul class="nav-primary">
 			<?php wp_nav_menu(array('container' => '','menu' => 'main', 'items_wrap' => '%3$s')); ?>
 			</ul>
 		
