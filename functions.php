@@ -1,7 +1,7 @@
 <?php	
 // add RSS links to <head> section
 
-automatic_feed_links();
+add_theme_support('automatic_feed_links');
 
 // thumbnail & menu support
 
@@ -12,17 +12,23 @@ add_theme_support('automatic-feed-links');
 
 // remove junk from head
 
-remove_action('wp_head', 'rsd_link');
-remove_action('wp_head', 'wp_generator');
-remove_action('wp_head', 'feed_links', 2);
-remove_action('wp_head', 'index_rel_link');
-remove_action('wp_head', 'wlwmanifest_link');
-remove_action('wp_head', 'feed_links_extra', 3);
-remove_action('wp_head', 'start_post_rel_link', 10, 0);
-remove_action('wp_head', 'parent_post_rel_link', 10, 0);
-remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+function cleanup() {
+	remove_action('wp_head', 'rsd_link');
+	remove_action('wp_head', 'wp_generator');
+	remove_action('wp_head', 'feed_links', 2);
+	remove_action('wp_head', 'index_rel_link');
+	remove_action('wp_head', 'wlwmanifest_link');
+	remove_action('wp_head', 'feed_links_extra', 3);
+	remove_action('wp_head', 'start_post_rel_link', 10, 0);
+	remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+	remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
+	if( !is_admin()){
+	    wp_deregister_script('jquery');
+	}
+}
 
+add_action('init', 'cleanup');
 
 // new taxonomy
 
@@ -91,9 +97,7 @@ function create_post_type() {
 
 // deregister jquery (we are loading jquery with enchance.js
 
-if( !is_admin()){
-    wp_deregister_script('jquery');
-}
+
 
 // register navigation
 
@@ -159,18 +163,5 @@ function autofilter_filename($file) {
 add_filter('wp_handle_upload_prefilter', 'autofilter_filename');
 */
 
-// Deregister contact form 7 styles (style has been added to form.less (commented away though), js can be found from js/form.min.js
-
-function disable_contact7_scripts() {
-	wp_deregister_script( 'contact-form-7' );
-}
-add_action( 'wp_print_scripts', 'disable_contact7_scripts' );
-
-
-function disable_contact7_styles() {
-	wp_deregister_style( 'contact-form-7' );
-	wp_deregister_style( 'contact-form-7-rtl' );
-}
-add_action( 'wp_print_styles', 'disable_contact7_styles' );
 
 ?>
