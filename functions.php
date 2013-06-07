@@ -127,7 +127,7 @@ function remove_menu_items() {
 
 add_action('admin_menu', 'remove_menu_items');
 
-// detect browser
+// detect browser (if for some reason you need a special hack)
 
 /*
 add_filter('body_class','browser_body_class');
@@ -146,22 +146,6 @@ function browser_body_class($classes) {
 }
 */
 
-// Clean uploaded filenames
-
-/*
-function autofilter_filename($file) {
-	$name = $file['name'];
-	$name = utf8_decode($name);
-	$name = utf8_encode($name);
-	$search  = array('Ä', 'ä', 'Ö', 'ö', 'Å', 'å', 'Ü', 'ü');
-	$replace = array('A', 'a', 'O', 'o', 'A', 'a', 'U', 'u');
-	$result1 = str_replace($search, $replace, $name);
-	$file['name'] = $result1;
-    return $file;
-}
-
-add_filter('wp_handle_upload_prefilter', 'autofilter_filename');
-*/
 
 
 ?>
