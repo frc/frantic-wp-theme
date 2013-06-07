@@ -25,11 +25,6 @@
 <meta property="og:image" content="">
 <meta property="fb:admins" content="">
 
-<script>
-var siteUrl = '<?php get_option('home');?>';
-var templateUrl = '<?php bloginfo( 'template_directory' ); ?>';
-</script>
-
 
 <!--[if gt IE 8]><!-->
 <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/style.css">
@@ -47,7 +42,6 @@ var templateUrl = '<?php bloginfo( 'template_directory' ); ?>';
 <script src="<?php bloginfo( 'template_directory' ); ?>/js/vendor/ie/selectivizr-min.js"></script>
 <![endif]-->
 
-<script src="<?php bloginfo( 'template_directory' ); ?>/quickconcat.php?files=<?php bloginfo( 'template_directory' ); ?>/js/lib/enhance.js,<?php bloginfo( 'template_directory' ); ?>/js/enhance.config.js" defer async></script>
 
 <!-- ICONS -->
 <link rel="shortcut icon" href="/favicon.ico">
