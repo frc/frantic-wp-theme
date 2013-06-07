@@ -1,35 +1,39 @@
 
-// BASE ===============================
-
-/* All your base styles. Usually those that do not need classes */
-
-// CSS reset
-@import "reset";
+// CONFIG
 
 // Variables and mixins
 @import "variables";
 @import "mixins";
 
+
+
+// BASE ===============================
+
+/* All your base styles. Usually those that do not need classes */
+
+// CSS reset
+@import "base/reset";
+
 // Site wide styles (html, body)
-@import "site";
+@import "base/site";
 
 // Block level (h1, p) and text-level (em, strong) type
-@import "typography";
+@import "base/typography";
 
 // Colour interaction semantics (links etc.)
-@import "colour";
+@import "base/colour";
 
 // icons (if you have those)
-//@import "icons";
+//@import "base/icons";
 
 // Figures, images and other elements
-@import "elements";
+@import "base/elements";
 
 // Standard form controls
-@import "forms";
+@import "base/forms";
 
 // Tables
-@import "tables";
+@import "base/tables";
 
 
 
@@ -38,13 +42,13 @@
 /* css objects (these are not to be altered. Modify modules instead) */
 
 // Nav abstraction
-@import "nav";
+@import "objects/nav";
 
 // media object (picture on left text on right. Reversed also)
-@import "media-block";
+@import "objects/media-block";
 
 // flag object (same as media but text is vertically aligned 
-//@import "flag";
+//@import "objects/flag";
 
 
 
@@ -52,7 +56,7 @@
 
 /*  Page level layout styles (usually prefixed with l-something).  */
 
-@import "layout";
+@import "layout/layout";
 
 
 // MODULES =============================
@@ -66,7 +70,7 @@
 
 /* js driven states. Add js- prefix to separate from basic styles */
 
-@import "states";
+@import "states/states";
 
 
 // SHAME
@@ -80,5 +84,5 @@
 /* Print styles */
 
 @media print {
-@import "print";
+@import "base/print";
 }
