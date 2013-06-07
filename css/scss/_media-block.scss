@@ -1,0 +1,67 @@
+/* MEDIA OBJECT:
+
+ <div class="media">
+ 
+ 	<figure class="media__img">
+ 		<img src="http://placehold.it/150x150">
+ 	</figure>
+ 	
+ 	<div class="media__body">
+ 		
+ 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet tellus velit, ut semper neque.</p>
+ 	
+ 	</div>
+ 	
+  </div><!-- end media -->
+  
+  REVERSED:
+  
+  <div class="media">
+  
+  	<figure class="media__img--rev">
+  		<img src="http://placehold.it/150x150">
+  	</figure>
+  	
+  	<div class="media__body">
+  		
+  		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet tellus velit, ut semper neque.</p>
+  			
+  	</div>
+  	
+  
+  </div><!-- end media -->
+
+*/ 	
+ 
+
+.media{
+display:block;
+@include clearfix();
+}
+
+.media__img{
+float:left;
+margin-right:$baseline;
+}
+
+// Reversed image location (right instead of left).
+
+.media__img--rev{
+float:right;
+margin-left:$baseline;;
+}
+
+.media__img img,
+.media__img--rev img{
+display:block;
+}
+
+.media__body{
+overflow:hidden;
+}
+
+.media__body,
+.media__body > :last-child{
+margin-bottom:0;
+}
+

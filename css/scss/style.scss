@@ -1,6 +1,8 @@
 
 // BASE ===============================
 
+/* All your base styles. Usually those that do not need classes */
+
 // CSS reset
 @import "reset";
 
@@ -10,13 +12,14 @@
 
 // Site wide styles (html, body)
 @import "site";
+
 // Block level (h1, p) and text-level (em, strong) type
 @import "typography";
 
-// Colour interaction semantics
+// Colour interaction semantics (links etc.)
 @import "colour";
 
-// icons
+// icons (if you have those)
 //@import "icons";
 
 // Figures, images and other elements
@@ -29,24 +32,52 @@
 @import "tables";
 
 
+
+// OBJECTS
+
+/* css objects (these are not to be altered. Modify modules instead) */
+
+// Nav abstraction
+@import "nav";
+
+// media object (picture on left text on right. Reversed also)
+@import "media-block";
+
+// flag object (same as media but text is vertically aligned 
+//@import "flag";
+
+
+
 // LAYOUT  =============================
 
-// Page level layout styles (banner, navigation, content, contentinfo)
+/*  Page level layout styles (usually prefixed with l-something).  */
 
 @import "layout";
 
 
 // MODULES =============================
 
-// navigation
-@import "nav";
+/* All your site modules. Nav-primary, footer etc. */
+
+
+
 
 // STATES ==============================
 
-//js driven states
+/* js driven states. Add js- prefix to separate from basic styles */
+
 @import "states";
 
+
+// SHAME
+
+/* This is were you put all your dirty hacks.   */
+
+//@import "shame";
+
 // PRINT ===============================
+
+/* Print styles */
 
 @media print {
 @import "print";

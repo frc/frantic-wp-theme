@@ -2,8 +2,6 @@
 
 /* Mixins =================================================== */
 
-// 1. ROOT 					==============================
-// 2. TYPOGRAPHY 			==============================
 
 
 $font: 16;
@@ -11,13 +9,108 @@ $font: 16;
     font-size: ($target / $default) + 0em;
 }
 
+// target / context
+
+@function calc-percent($target, $container) {
+  @return ($target / $container) * 100%;
+}
+
+
+// RGBA FALLBACKS
+
+@function trans($color, $percentage) {
+ @return lighten($color, (1-$percentage)*5%);
+}
+@function transd($color, $percentage) {
+ @return darken($color, (1-$percentage)*5%);
+}
+@mixin tran($type, $color, $percentage, $shade: ligthen) {
+  @if $shade == lighten {
+    @if $type == color {
+      color: trans($color, $percentage);
+      color: rgba($color, $percentage);
+    }
+    @if $type == bg {
+      background-color: trans($color, $percentage);
+      background-color: rgba($color, $percentage);
+    }
+  }
+  @else {
+     @if $type == color {
+      color: transd($color, $percentage);
+      color: rgba($color, $percentage);
+    }
+    @if $type == bg {
+      background-color: transd($color, $percentage);
+      background-color: rgba($color, $percentage);
+    }
+  }
+}
+
+
+// MEDIAQUERIES
+
+/*
+ Use like this:
+
+@include media-min(48em) {
+
+}
+
+And for old ie (ie stylesheet is generated from mediaqueries and you can define max width for it. Check ie.scss). 
+
+@include old-ie {
+	iehack :here;
+}
+
+*/
+
+$fix-mqs: false !default;
+
+@mixin media-min($width) {
+	@if $fix-mqs {
+		@if $fix-mqs >= $width {
+			@content;	
+		}
+	}
+	@else {
+		@media screen and (min-width: $width) {
+			@content;
+		}
+	}
+}
+@mixin media-max($width) {
+	@if $fix-mqs {
+		@if $fix-mqs <= $width {
+			@content;	
+		}
+	}
+	@else {
+		@media screen and (max-width: $width) {
+			@content;
+		}
+	}
+}
+
+$old-ie: false !default;
+
+@mixin old-ie {
+	@if $old-ie {
+		@content;
+	}
+}
+
+
+
+
+// text overflow
+
 @mixin text-overflow() {
 overflow : hidden;
 text-overflow : ellipsis;
 white-space : nowrap; }
 
-// 3. COLOUR 				==============================
-// 4. TEXTURE 				==============================
+
 
 // gradients
 

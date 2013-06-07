@@ -1,84 +1,44 @@
 
+.nav {
+list-style:none;
+margin-left:0;
+padding: 0;
 
+    > li {
 
-
-// ANIMATIONS
-
-/*
-@-webkit-keyframes fade-in {
-0% {
-opacity : 0;
-}
-60% {
-opacity : 0;
-}
-
-100% {
-opacity : 1;
-}
-
-}
-
-@-moz-keyframes fade-in {
-0% {
-opacity : 0;
-}
-60% {
-opacity : 0;
-}
-
-100% {
-opacity : 1;
-}
-
-}
-
-@-o-keyframes fade-in {
-0% {
-opacity : 0;
-}
-60% {
-opacity : 0;
-}
-
-100% {
-opacity : 1;
-}
-
-}
-
-@keyframes fade-in {
-0% {
-opacity : 0;
-}
-60% {
-opacity : 0;
-}
-
-100% {
-opacity : 1;
-}
-
+        &,
+        > a {
+            display:inline-block;
+           *display:inline;
+            zoom:1;
+        }
+    }
 }
 
 
-.example {
--webkit-animation-name: fade-in;
--webkit-animation-duration: 0.7s;
--webkit-animation-timing-function: ease-in;
--webkit-animation-iteration-count: 1;
--moz-animation-name: fade-in;
--moz-animation-duration: 0.7s;
--moz-animation-timing-function: ease-in;
--moz-animation-iteration-count: 1;
--o-animation-name: fade-in;
--o-animation-duration: 0.7s;
--o-animation-timing-function: ease-in;
--o-animation-iteration-count: 1;
-animation-name: fade-in;
-animation-duration: 0.7s;
-animation-timing-function: ease-in;
-animation-iteration-count: 1;
+.nav--stacked {
+
+    > li {
+        display:list-item;
+
+        > a {
+            display:block;
+        }
+    }
 }
 
-*/
+
+// force nav to occupy full space
+
+.nav--fit {
+display:table;
+width:100%;
+
+    > li {
+        display:table-cell;
+
+        > a {
+            display:block;
+        }
+    }
+}

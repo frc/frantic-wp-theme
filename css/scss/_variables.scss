@@ -1,4 +1,7 @@
 
+
+/* Variables =================================================== */
+
 // greyscale
 
 $black 			: rgb(0,0,0);
@@ -8,17 +11,17 @@ $lightgrey 		: lighten($black, 75%);
 $lightergrey 	: lighten($black, 90%);
 $white 			: rgb(255,255,255);
 
-// base 					==============================
+// 1. ROOT 					==============================
 
 $bodycolor : $white;
 $textcolor : black;
 
-// typography
+// 2. TYPOGRAPHY 			==============================
 
-$basefont : "Helvetica Neue", Helvetica, Arial, sans-serif;
+$basefont : Georgia, serif;
 $basefontsize : 16;
 $baselineheight : 1.5em;
-$baseheadingfont : inherit;
+$baseheadingfont :  inherit;
 $baseheadingfontweight : bold;
 $baseheadingfontcolor : inherit;
 
@@ -26,6 +29,8 @@ $altfont : Cambria, Georgia, Times, "Times New Roman";
 $altlineheight : 1.35em;
 
 $codefont : Monaco, Courier New, monospace;
+
+// 3. COLOUR 				==============================
 
 $basecolor 		: rgb(45,53,62);
 $compcolor 		: adjust-hue($basecolor, 180);
@@ -39,6 +44,8 @@ $linkcolorvisited   : darken($linkcolorhover, 10);
 $linkcolorfocus 	: darken($linkcolorvisited, 10);
 
 
+
+// 4. TEXTURE 				==============================
 // tables
 
 $tablebackground 	: transparent;
@@ -58,43 +65,9 @@ $inputhover 		: lighten($basecolor, 20%);
 $inputfocus 		: $basecolor, 40%;
 $placeholdercolor 	: $lightgrey;
 
+// 6. LAYOUT 				==============================
+
 $baseline : $baselineheight;
 $gutterwidth : 24px;
 
-// MEDIAQUERY MIXIN
-
-$fix-mqs: false !default;
-
-@mixin media-min($width) {
-	@if $fix-mqs {
-		@if $fix-mqs >= $width {
-			@content;	
-		}
-	}
-	@else {
-		@media screen and (min-width: $width) {
-			@content;
-		}
-	}
-}
-@mixin media-max($width) {
-	@if $fix-mqs {
-		@if $fix-mqs <= $width {
-			@content;	
-		}
-	}
-	@else {
-		@media screen and (max-width: $width) {
-			@content;
-		}
-	}
-}
-
-$old-ie: false !default;
-
-@mixin old-ie {
-	@if $old-ie {
-		@content;
-	}
-}
 

@@ -23,14 +23,12 @@ html {
 body {
 background-color : $bodycolor;
 font-family : $basefont;
+font-weight : 400;
 font-size: 100%;
 line-height : $baselineheight;
 color : $textcolor;
-	@include media-min(75em) {
-		background-color : silver;
-	} 
-	@include old-ie {
-		background-color : red;
-	}
 }
 
+.clearfix {
+@include clearfix();
+}

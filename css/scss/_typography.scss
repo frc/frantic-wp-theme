@@ -13,6 +13,7 @@ font-family : $baseheadingfont;
 font-weight : $baseheadingfontweight;
 color : $baseheadingfontcolor;
 text-rendering : optimizelegibility;
+text-indent: -1px;
 }
 
 h1 small,
@@ -68,6 +69,10 @@ address {
 margin-bottom : $baselineheight;
 @include font-size(14);
 line-height : $baselineheight; }
+
+.lead {
+font-size: 105%;	
+}
 
 small {
 @include font-size(14); }
