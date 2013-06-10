@@ -4,6 +4,11 @@
  * Add all your Custom Post Types and Custom Taxonomies here.
  * You might want to use an online tool in http://generatewp.com/post-type/ to 
  * create Custom Post Types scripts.
+ *
+ * If you have multiple languages, you might be better off using WPML's Types
+ * add on. It makes translating Custom Post Types and Taxonomies easier.
+ * If you choose to do so, just comment out a reference in functions.php to this file.
+ *
 */
 
 
