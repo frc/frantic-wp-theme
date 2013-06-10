@@ -48,7 +48,6 @@
 <link rel="shortcut icon" href="/favicon.png">
 
 <link rel="canonical" href="/">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php //if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
@@ -68,9 +67,14 @@
 
 		<nav role="navigation">
 		
-			<ul class="nav-primary">
-			<?php wp_nav_menu(array('container' => '','menu' => 'main', 'items_wrap' => '%3$s')); ?>
-			</ul>
+			<?php wp_nav_menu(
+				array(
+					'menu' => 'main',
+					'container' => '',
+					'menu_class' => 'nav-primary',
+					'items_wrap' => '%3$s'
+				)
+			); ?>
 		
 		</nav><!-- end navigation -->
 
