@@ -16,7 +16,6 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="cleartype" content="on">
 
 <meta property="og:title" content="<?php bloginfo( 'name' ) ?>">
 <meta property="og:description" content="">
@@ -67,14 +66,15 @@
 
 		<nav role="navigation">
 		
+			<ul class="nav-primary">
 			<?php wp_nav_menu(
 				array(
 					'menu' => 'main',
-					'container' => '',
-					'menu_class' => 'nav-primary',
+					'container' => false,
 					'items_wrap' => '%3$s'
 				)
 			); ?>
+			</ul>
 		
 		</nav><!-- end navigation -->
 
