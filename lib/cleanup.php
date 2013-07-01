@@ -3,7 +3,7 @@
 
 function cleanup() {
 	remove_action('wp_head', 'rsd_link');
-	remove_action('wp_head', 'wp_generator');
+	//remove_action('wp_head', 'wp_generator'); // This is not needed if the method below is used.
 	remove_action('wp_head', 'feed_links', 2);
 	remove_action('wp_head', 'index_rel_link');
 	remove_action('wp_head', 'wlwmanifest_link');
@@ -18,5 +18,13 @@ function cleanup() {
 }
 
 add_action('init', 'cleanup');
+
+
+// Remove version number from everywhere.
+function wpbeginner_remove_version() {
+	return '';
+}
+
+add_filter('the_generator', 'wpbeginner_remove_version');
 
 ?>
