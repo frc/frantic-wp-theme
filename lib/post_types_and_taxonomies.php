@@ -73,6 +73,4 @@ function create_post_type() {
 		
 }
 */
-
-*/
 ?>
