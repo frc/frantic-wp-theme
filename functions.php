@@ -5,6 +5,7 @@ require_once('lib/cleanup.php');
 require_once('lib/scripts_and_styles.php'); 
 require_once('lib/disable_pingback.php');
 require_once('lib/post_types_and_taxonomies.php');
+//require_once('lib/navigation.php');
 
 
 // add RSS links to <head> section
