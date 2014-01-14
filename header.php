@@ -1,4 +1,3 @@
-<?php include("categorizr.php");?>
 <!doctype html>
 
 <!-- HTML5 Boilerplate -->
