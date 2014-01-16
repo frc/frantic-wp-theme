@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" <?php language_attributes(); ?>><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
+<html class="no-js" <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,17 +14,6 @@
 	<meta property="og:url" content="">
 
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/main.css">
-
-	<!--[if (lt IE 9) & (!IEMobile)]>
-	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/ie/nwmatcher-min.js"></script>
-	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/ie/selectivizr-min.js"></script>
-	<![endif]-->
-
-	<!-- ICONS -->
-	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="shortcut icon" href="/favicon.png">
-
-	<?php // if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
 	<?php wp_head(); ?>
 </head>
