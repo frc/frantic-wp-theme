@@ -1,0 +1,81 @@
+//	===========================================================================
+//	LAYOUT
+//	---------------------------------------------------------------------------
+//	These are the major layour components. Layout style usually only has a
+//	single selector: a ID or class. There rules divide the page into sections.
+//
+//	EXAMPLES
+//	---------------------------------------------------------------------------
+//	.l-wrap {
+//		width: 100%;
+//	}
+//
+//	.l-constrained {
+//		width: 88%;
+//		margin: 5% auto;
+//	}
+//
+//	.l-main {
+//		width: 60%;
+//		float: left;
+//	}
+//
+//	.l-complementary {
+//		width: 40%;
+//		float: left;
+//	}
+//	===========================================================================
+
+.l-wrap {
+	width: 100%;
+}
+
+.l-constrained {
+	width: percentage(300 / 320);
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.l-constrained--full {
+	width: 100%;
+	max-width: none;
+}
+
+.l-main {
+	width: 75%;
+	float: left;
+}
+
+.l-complementary {
+	width: 25%;
+	float: left;
+}
+
+.g {
+	float: left;
+}
+
+.g1 {
+	width: 33.3333333333%;
+}
+
+.g2 {
+	width: 66.6666666666%;
+}
+
+.g-half {
+	width: 50%;
+}
+
+
+//	---------------------------------------------------------------------------
+//	Utilities.
+//	---------------------------------------------------------------------------
+
+.hide-mobile {
+	display: none !important;
+}
+
+.hide-desktop {
+	display: inline-block;
+}

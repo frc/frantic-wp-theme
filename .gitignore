@@ -38,3 +38,5 @@ wp-content/uploads/
 sitemap.xml
 sitemap.xml.gz
 /readme.html
+
+node_modules

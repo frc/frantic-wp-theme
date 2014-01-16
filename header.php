@@ -16,13 +16,7 @@
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="">
 
-	<!--[if gt IE 8]><!-->
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/style.css">
-	<!--<![endif]-->
-
-	<!--[if lte IE 8]>
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/ie.css">
-	<![endif]-->
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/main.css">
 
 	<!--[if (lt IE 9) & (!IEMobile)]>
 	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/ie/nwmatcher-min.js"></script>
