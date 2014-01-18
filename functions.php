@@ -19,6 +19,12 @@ add_theme_support('post-thumbnails');
 
 // add_post_type_support('page', 'excerpt');
 
+// If you have Articles in use on your site, 
+// enable this to allow widgets to show.
+if ( function_exists('register_sidebar') ) {
+  register_sidebar();
+}
+
 
 /**
  * Register menu(s).
