@@ -16,6 +16,7 @@ require_once('lib/post_types_and_taxonomies.php');
 add_theme_support('automatic-feed-links');
 add_theme_support('menus');
 add_theme_support('post-thumbnails');
+add_theme_support('html5', array('comment-list', 'comment-form', 'search-form'));
 
 // add_post_type_support('page', 'excerpt');
 
