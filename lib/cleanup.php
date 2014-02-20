@@ -28,4 +28,11 @@ function remove_version_info() {
 }
 add_action('the_generator', 'remove_version_info');
 
+
+/**
+ * Remove WPML language css
+ */
+
+/*define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);*/
+
 ?>
