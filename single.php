@@ -6,7 +6,7 @@
 		
 			<?php if (have_posts()) : ?>
 			
-				<?php while (have_posts()) : the_post(); ?>    
+				<?php while (have_posts()) : the_post(); ?>
 				
 					<article <?php post_class(); ?>>
 					
@@ -27,9 +27,9 @@
 						
 					</article>
 					
-					<?php wp_list_categories(); ?> 
+					<?php wp_list_categories(); ?>
 					
-					<?php the_tags(); ?> 
+					<?php the_tags(); ?>
 					
 		
 				<?php endwhile; ?>
