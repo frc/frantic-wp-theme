@@ -12,65 +12,87 @@
 */
 
 
-
-// new taxonomy
-
-/*function cases_init() {
-	// create a new taxonomy
-	register_taxonomy(
-		'cases',
-		'works',
-		array(
-			'hierarchical' => true,
-			'label' => __('Cases'),
-			'sort' => true,
-			'args' => array('orderby' => 'term_order'),
-			'rewrite' => array('slug' => 'cases')
-		)
-	);
-}
-add_action( 'init', 'cases_init' );
-*/
-
-
-// custom post type
-
 /*
-add_action('init', 'create_post_type');
 
-function create_post_type() {
-	register_post_type( 'custom-post-type',
-		array(
-			'labels' => array(
-				'name' => _x('custom-post-type', 'post type general name'),
-				'singular_name' => _x('custom-post-type', 'post type singular name'),
-			    'add_new' => _x('Add new', 'custom-post-type'),
-			    'add_new_item' => __('Add new custom-post-type'),
-		    	'edit_item' => __('Edit item'),
-    			'new_item' => __('New custom-post-type'),
-			    'all_items' => __('All custom-post-type'),
-    			'view_item' => __('Show custom-post-type'),
-			    'search_items' => __('Find custom-post-type'),
-		    	'not_found' =>  __('Not found'),
-	    		'not_found_in_trash' => __('Nothing in trash'), 
-    			'parent_item_colon' => '',
-			    'menu_name' => 'custom-post-type'
-			),
-			'public' => true,
-		    'publicly_queryable' => true,
-    		'show_ui' => true, 
-		    'show_in_menu' => true, 
-    		'query_var' => true,
-			//'rewrite' => array('slug' => 'something'),
-	    	'capability_type' => 'post',
-			'has_archive' => true,
-    		'hierarchical' => false,
-			'menu_position' => 5,
-			'supports' => array('title', 'editor', 'excerpt', 'custom-fields', 'author', 'thumbnail', 'comments'),
-			'taxonomies' => array('post_tag','category')
-		)
+// An example implementation of custom post type called Tapahtumat.
+
+function init_events() {
+
+	$labels = array(
+		'name'                => 'Tapahtumat',
+		'singular_name'       => 'Tapahtuma',
+		'menu_name'           => 'Tapahtumat',
+		'parent_item_colon'   => 'Ylätason tapahtuma:',
+		'all_items'           => 'Kaikki tapahtumat',
+		'view_item'           => 'Katso tapahtuman tiedot',
+		'add_new_item'        => 'Lisää uusi tapahtuma',
+		'add_new'             => 'Uusi tapahtuma',
+		'edit_item'           => 'Muokkaa tapahtumaa',
+		'update_item'         => 'Päivitä tapahtuma',
+		'search_items'        => 'Etsi tapahtumista',
+		'not_found'           => 'Yhtään tapahtumaa ei löytynyt',
+		'not_found_in_trash'  => 'Yhtään tapahtumaa ei löytynyt roskakorista',
 	);
-		
+	$rewrite = array(
+		'slug'                => 'tapahtumat',
+		'with_front'          => true,
+		'pages'               => true,
+		'feeds'               => true,
+	);
+	$args = array(
+		'label'               => 'event',
+		'description'         => 'Tapahtumat',
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'custom-fields', ),
+		'taxonomies'          => array( 'event_categories' ),
+		'menu_icon'			  => 'dashicons-calendar',
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 1,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'rewrite'			  => $rewrite,
+		'capability_type'     => 'post',
+	);
+	register_post_type( 'events', $args );
 }
+
+	// Register Custom Taxonomy
+	function init_event_taxonomies()  {
+
+		$labels = array(
+			'name'                       => 'Tapahtumien kategoriat',
+			'singular_name'              => 'Tapahtumien kategoria',
+			'menu_name'                  => 'Tapahtumien kategoriat',
+			'all_items'                  => 'Kaikki kategoriat',
+			'parent_item'                => 'Ylätason kategoria',
+			'parent_item_colon'          => 'Ylätason kategoria:',
+			'new_item_name'              => 'Uusi kategoria',
+			'add_new_item'               => 'Lisää uusi kategoria',
+			'edit_item'                  => 'Muokkaa kategoriaa',
+			'update_item'                => 'Päivitä kategoriaa',
+			'separate_items_with_commas' => 'Erota kategoriat pilkulla',
+			'search_items'               => 'Etsi kategorioista',
+			'add_or_remove_items'        => 'Lisää tai poista kategorioita',
+			'choose_from_most_used'      => 'Valitse useimmin käytetyistä',
+		);
+		$args = array(
+			'labels'                     => $labels,
+			'hierarchical'               => true,
+			'public'                     => true,
+			'show_ui'                    => true,
+			'show_admin_column'          => true,
+			'show_in_nav_menus'          => true,
+			'show_tagcloud'              => true,
+		);
+		register_taxonomy( 'event_categories', 'custom_post_type', $args );
+
+	}
 */
 ?>
