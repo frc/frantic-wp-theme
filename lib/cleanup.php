@@ -13,9 +13,7 @@ function cleanup() {
 	remove_action('wp_head', 'start_post_rel_link', 10, 0);
 	remove_action('wp_head', 'wlwmanifest_link');
 
-	if (!is_admin()) {
-		wp_deregister_script('jquery');
-	}
+	//wp_deregister_script('jquery');
 }
 add_action('init', 'cleanup');
 
