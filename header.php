@@ -13,7 +13,11 @@
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="">
 
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/main.css">
+	<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/min/main.min.css">
+
+	<!--[if lte IE 8]>
+		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/min/ie.min.css">
+	<![endif]-->
 
 	<?php wp_head(); ?>
 </head>
