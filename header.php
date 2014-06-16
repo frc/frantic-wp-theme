@@ -13,7 +13,9 @@
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="">
 
-	<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/min/main.min.css">
+	<!--[if gt IE 8]><!-->
+		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/min/main.min.css">
+	<!--<![endif]-->
 
 	<!--[if lte IE 8]>
 		<link rel="stylesheet" href="<?php echo get_bloginfo("template_directory"); ?>/assets/css/min/ie.min.css">
