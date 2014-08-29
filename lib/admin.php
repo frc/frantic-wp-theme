@@ -38,6 +38,21 @@ add_filter('custom_menu_order', 'custom_menu_order'); // Activate custom_menu_or
 add_filter('menu_order', 'custom_menu_order');
 
 
+/**
+ * CUSTOM LOGIN SCREEN
+ */
+/*
+function custom_login_css() {
+	// Use the style.css that's already at theme root
+	echo '<link rel="stylesheet" href="' . get_theme_root_uri() . '/style.css">';
+}
+function custom_login_url() {  return home_url(); }
+function custom_login_title() { return get_option('blogname'); }
+add_action('login_head', 'custom_login_css');
+add_filter('login_headerurl', 'custom_login_url');
+add_filter('login_headertitle', 'custom_login_title');
+*/
+
 
 /**
  * Custom styles dropdown to editor
