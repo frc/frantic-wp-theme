@@ -22,7 +22,7 @@ function custom_menu_order($menu_ord) {
 		// Add custom post types here like this:
 		// 'edit.php?post_type=event',
 		// Gravity forms:
-		// 'admin.php?page=gf_edit_forms',
+		// 'gf_edit_forms',
 		'upload.php', // Media
 		'edit-comments.php', // Comments
 		'separator2', // Second separator
