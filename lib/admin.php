@@ -1,12 +1,20 @@
 <?php
 
-/* 
+/**
  * Customizations to admin
  *
+ * Disable update message
  * Reorder admin menu
+ * Customize admin menu entires
  * Custom styles to editor
  *
-*/
+ */
+
+	// Removes Update Core message from Dashboard
+	add_action( 'admin_menu', 'hide_wordpress_update_notices' );
+	function hide_wordpress_update_notices() {
+		remove_action( 'admin_notices', 'update_nag', 3 );
+	}
 
 /**
  * Reorder admin menu.
@@ -37,6 +45,40 @@ function custom_menu_order($menu_ord) {
 add_filter('custom_menu_order', 'custom_menu_order'); // Activate custom_menu_order
 add_filter('menu_order', 'custom_menu_order');
 
+/**
+ * Customize admin menu entires
+ * @url http://codex.wordpress.org/Function_Reference/current_user_can
+ * @url http://codex.wordpress.org/Function_Reference/remove_menu_page
+ * @url http://codex.wordpress.org/Function_Reference/remove_submenu_page
+ */
+
+	add_action( 'admin_menu', 'customize_admin_menu', 9999 );
+	function customize_admin_menu() {
+
+		// Allow access to these pages only to @frantic.com users
+		if ( ! strpos( get_userdata( get_current_user_id() )->user_email, 'frantic.com' ) ) {
+
+			// Hide Advanced Custom Fields
+			remove_menu_page( 'edit.php?post_type=acf-field-group' );
+
+			// Hide "Updates" under Dashboard menu
+			remove_submenu_page( 'index.php', 'update-core.php' );
+
+			// Hide General Settings
+			remove_menu_page( 'options-general.php' );
+
+			// Hide Plugins
+			remove_menu_page( 'plugins.php' );
+
+			// Hide Themes
+			remove_menu_page( 'themes.php' );
+
+			// Hide Tools
+			remove_menu_page( 'tools.php' );
+
+		}
+
+	}
 
 /**
  * CUSTOM LOGIN SCREEN
@@ -57,7 +99,7 @@ add_filter('login_headertitle', 'custom_login_title');
 /**
  * Custom styles dropdown to editor
  */
- 
+
 /*add_filter( 'mce_buttons_2', 'my_mce_buttons_2' );
 
 function my_mce_buttons_2( $buttons ) {
@@ -100,6 +142,3 @@ function my_mce_before_init( $settings ) {
 	add_editor_style( 'assets/css/custom-editor-style.css' );
 }
 add_action( 'init', 'my_theme_add_editor_styles' );*/
-
-
-?>
