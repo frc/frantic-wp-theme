@@ -45,6 +45,9 @@ add_filter('nav_menu_css_class', 'add_class_to_wp_nav_menu');
  * );
  * wp_nav_menu( $args );
  *
+ * Original: http://wordpress.stackexchange.com/questions/2802/display-a-portion-branch-of-the-menu-tree-using-wp-nav-menu/2809#2809
+ * Modified to support ID's by Tuomas Arokanto
+ *
  */
 add_filter( 'wp_nav_menu_objects', 'submenu_limit', 10, 2 );
 function submenu_limit( $items, $args ) {
