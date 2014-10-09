@@ -53,8 +53,6 @@ function submenu_limit( $items, $args ) {
 		return $items;
 	}
 
-	var_dump( $items );
-
 	if ( intval( $args->submenu ) > 0 ) {
 		// This is an ID
 		$ids = wp_filter_object_list( $items, array( 'object_id' => $args->submenu ), 'and', 'ID' );
