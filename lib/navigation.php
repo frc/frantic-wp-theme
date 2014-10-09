@@ -5,7 +5,7 @@
 // The id of each link is required for each one you want to modify.
 //
 // Note: this is a hack and should be removed once WP handles this stuff properly.
-
+/*
 function remove_parent_classes($class)
 {
 	// check for current page classes, return false if they exist.
@@ -32,4 +32,57 @@ function add_class_to_wp_nav_menu($classes)
 	return $classes;
 }
 add_filter('nav_menu_css_class', 'add_class_to_wp_nav_menu');
+*/
+
+
+/*
+ * Get only the children of 'submenu' in wp_nav_menu.
+ *
+ * Usage:
+ * $args = array(
+ *   'menu'    => 'Menu Name',
+ *   'submenu' => 'About Us', // OR 'submenu' => 1234
+ * );
+ * wp_nav_menu( $args );
+ *
+ */
+add_filter( 'wp_nav_menu_objects', 'submenu_limit', 10, 2 );
+function submenu_limit( $items, $args ) {
+
+	if ( empty( $args->submenu ) ) {
+		return $items;
+	}
+
+	var_dump( $items );
+
+	if ( intval( $args->submenu ) > 0 ) {
+		// This is an ID
+		$ids = wp_filter_object_list( $items, array( 'object_id' => $args->submenu ), 'and', 'ID' );
+	} else {
+		// Let's assume it's a name
+		$ids = wp_filter_object_list( $items, array( 'title' => $args->submenu ), 'and', 'ID' );
+	}
+
+	$parent_id = array_pop( $ids );
+	$children = submenu_get_children_ids( $parent_id, $items );
+
+	foreach ( $items as $key => $item ) {
+		if ( ! in_array( $item->ID, $children ) ) {
+			unset( $items[$key] );
+		}
+	}
+
+	return $items;
+}
+
+function submenu_get_children_ids( $id, $items ) {
+	$ids = wp_filter_object_list( $items, array( 'menu_item_parent' => $id ), 'and', 'ID' );
+
+	foreach ( $ids as $id ) {
+		$ids = array_merge( $ids, submenu_get_children_ids( $id, $items ) );
+	}
+
+	return $ids;
+}
+
 ?>

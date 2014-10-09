@@ -8,7 +8,7 @@ require_once('lib/scripts.php');
 require_once('lib/disable_pingback.php');
 require_once('lib/post_types_and_taxonomies.php');
 require_once('lib/admin.php');
-// require_once('lib/navigation.php');
+require_once('lib/navigation.php');
 
 
 /**
