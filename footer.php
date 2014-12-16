@@ -1,8 +1,8 @@
-	<div class="l-constrained">
+    <div class="l-constrained">
 
-		<footer role="contentinfo"></footer>
+        <footer role="contentinfo"></footer>
 
-	</div><!-- end content -->
+    </div><!-- end content -->
 
 </div><!--end wrap -->
 

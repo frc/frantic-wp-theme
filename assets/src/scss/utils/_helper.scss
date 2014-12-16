@@ -1,5 +1,5 @@
 /*------------------------------------*\
-	$HELPER
+    $HELPER
 \*------------------------------------*/
 /**
  * A series of helper classes to use arbitrarily. Only use a helper class if an
@@ -26,42 +26,42 @@
 /**
  * Add/remove floats
  */
-.float--right { 
-	float: right!important; 
+.float--right {
+    float: right!important;
 }
-.float--left { 
-	float: left !important; 
+.float--left {
+    float: left !important;
 }
-.float--none { 
-	float: none !important; 
+.float--none {
+    float: none !important;
 }
 
 
 /**
  * Text alignment
  */
-.text--left { 
-	text-align: left!important; 
+.text--left {
+    text-align: left!important;
 }
-.text--center { 
-	text-align: center!important; 
+.text--center {
+    text-align: center!important;
 }
-.text--right { 
-	text-align: right !important; 
+.text--right {
+    text-align: right !important;
 }
 
 .chromeframe {
-	padding: 0.2em 0;
-	margin: 0.2em 0;
-	background: $lightgrey;
-	color: $black;
+    padding: 0.2em 0;
+    margin: 0.2em 0;
+    background: $lightgrey;
+    color: $black;
 }
 
 /**
  * Apply capital case to an element (usually a `strong`).
  */
 .caps {
-	text-transform: uppercase!important;
+    text-transform: uppercase!important;
 }
 
 
@@ -70,16 +70,16 @@
  * breakpoint specific hidden elements.
  */
 @mixin accessibility{
-	border:0!important;
-	clip:rect(0 0 0 0)!important;
-	height:1px!important;
-	margin:-1px!important;
-	overflow:hidden!important;
-	padding:0!important;
-	position: absolute!important;
-	width:1px!important;
+    border:0!important;
+    clip:rect(0 0 0 0)!important;
+    height:1px!important;
+    margin:-1px!important;
+    overflow:hidden!important;
+    padding:0!important;
+    position: absolute!important;
+    width:1px!important;
 }
 .accessibility,
 .visuallyhidden{
-	@include accessibility;
+    @include accessibility;
 }
