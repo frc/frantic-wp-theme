@@ -70,8 +70,12 @@ add_filter('menu_order', 'custom_menu_order');
             // Hide Plugins
             remove_menu_page( 'plugins.php' );
 
-            // Hide Themes
-            remove_menu_page( 'themes.php' );
+            // Hide Themes, but keep Menus visible
+            remove_submenu_page( 'themes.php', 'themes.php' );
+            remove_submenu_page( 'themes.php', 'customize.php?return=' . urlencode( $_SERVER['REQUEST_URI'] ) );
+
+            // Comment out the following to show widgets if they are in fact used in your project.
+            remove_submenu_page( 'themes.php', 'widgets.php' );
 
             // Hide Tools
             remove_menu_page( 'tools.php' );
