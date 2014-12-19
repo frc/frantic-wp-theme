@@ -2,7 +2,7 @@
     $WORDPRESS
 \*------------------------------------*/
 
-@if $wordpress= true {
+@if $wordpress {
     .alignnone {
         margin: 0 $base-line-height + em $base-line-height + em 0;
     }

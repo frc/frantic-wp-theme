@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*------------------------------------*\
     Compile mediaqueries for IE8
 \*------------------------------------*/
@@ -9,50 +8,50 @@
     $IMPORTS
 \*------------------------------------*/
 /*------------------------------------*\
-	$CONFIG
+    $CONFIG
 \*------------------------------------*/
 /*------------------------------------*\
-	Greyscale
+    Greyscale
 \*------------------------------------*/
 /*------------------------------------*\
-	Typography
+    Typography
 \*------------------------------------*/
 /*------------------------------------*\
-	Colors. Use meaningful names
+    Colors. Use meaningful names
 \*------------------------------------*/
 /*------------------------------------*\
-	Links
+    Links
 \*------------------------------------*/
 /*------------------------------------*\
-	Tables
+    Tables
 \*------------------------------------*/
 /*------------------------------------*\
-	Enable styles
+    Enable styles
 \*------------------------------------*/
 /*------------------------------------*\
-		$MIXINS
+        $MIXINS
 \*------------------------------------*/
 /*------------------------------------*\
-	Pixels to ems
-	font-size: em(21px, 15px); 
+    Pixels to ems
+    font-size: em(21px, 15px);
 \*------------------------------------*/
 /*------------------------------------*\
 
 Configurable Media Queries. Also used to generate old-ie CSS without MQs.
-		 $value		- Breakpoint value
-		 $feature	- Media query operator
-		 $media		- Media type
+         $value     - Breakpoint value
+         $feature   - Media query operator
+         $media     - Media type
 \*------------------------------------*/
 /*----------------------------------------------*\
-		RGBA fallbacks:
-		Use like this: @include tran(bg, #00ff00, .8);
+        RGBA fallbacks:
+        Use like this: @include tran(bg, #00ff00, .8);
 \*----------------------------------------------*/
 /*------------------------------------*\
-	$HELPER
+    $HELPER
 \*------------------------------------*/
 /**
  * A series of helper classes to use arbitrarily. Only use a helper class if an
- * element/component doesn’t already have a class to which you could apply this
+ * element/component doesn't already have a class to which you could apply this
  * styling, e.g. if you need to float `.main-nav` left then add `float:left;` to
  * that ruleset as opposed to adding the `.float--left` class to the markup.
  *
@@ -127,26 +126,13 @@ Configurable Media Queries. Also used to generate old-ie CSS without MQs.
 /**
  * Correct `block` display not defined in IE 8/9.
  */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
   display: block; }
 
 /**
  * Correct `inline-block` display not defined in IE 8/9.
  */
-audio,
-canvas,
-video {
+audio, canvas, video {
   display: inline-block; }
 
 /**
@@ -161,13 +147,11 @@ audio:not([controls]) {
  * Address `[hidden]` styling not present in IE 8/9.
  * Hide the `template` element in IE, Safari, and Firefox < 22.
  */
-[hidden],
-template {
+[hidden], template {
   display: none; }
 
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 html {
@@ -189,19 +173,13 @@ body {
 /*------------------------------------*\
     $TYPOGRAPHY
 \*------------------------------------*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-family: Georgia, Times, "Times New Roman", serif;
   font-weight: bold;
   text-rendering: optimizeLegibility; }
 
-h1,
-.alpha {
+h1, .alpha {
   margin-bottom: 0.5em;
   font-weight: bold;
   letter-spacing: -2px;
@@ -210,32 +188,27 @@ h1,
   font-size: 2em;
   line-height: 1.2; }
 
-h2,
-.beta {
+h2, .beta {
   margin-bottom: 0.75em;
   font-size: 1.75em;
   line-height: 1.2; }
 
-h3,
-.gamma {
+h3, .gamma {
   margin-bottom: 1em;
   font-size: 1.3125em;
   line-height: 1.3;
   text-transform: uppercase; }
 
-h4,
-.delta {
+h4, .delta {
   margin-bottom: 1.5em;
   font-size: 1.125em;
   line-height: 1.25; }
 
-h5,
-.epsilon {
+h5, .epsilon {
   margin-bottom: 1.5em;
   font-size: 1em; }
 
-h6,
-.zeta {
+h6, .zeta {
   margin-bottom: 1.5em;
   font-size: 0.875em;
   font-weight: 400;
@@ -249,17 +222,14 @@ p, blockquote {
   line-height: 1.3;
   font-size: 120%; }
 
-ol,
-ul {
+ol, ul {
   margin: 0 0 1.5em 0; }
-  ol.unstyled,
-  ul.unstyled {
+  ol.unstyled, ul.unstyled {
     list-style: none;
     margin: 0;
     padding: 0; }
 
-li > ul,
-li > ol {
+li > ul, li > ol {
   margin-bottom: 0; }
 
 .italic {
@@ -269,15 +239,13 @@ abbr[title] {
   border-bottom: dotted 1px;
   cursor: help; }
 
-b,
-strong {
+b, strong {
   font-weight: bold; }
 
 dfn {
   font-style: italic; }
 
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -285,10 +253,7 @@ mark {
   background: #ff0;
   color: #000; }
 
-code,
-kbd,
-pre,
-samp {
+code, kbd, pre, samp {
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 1em; }
 
@@ -303,8 +268,7 @@ q {
 small {
   font-size: 80%; }
 
-sub,
-sup {
+sub, sup {
   position: relative;
   font-size: 75%;
   line-height: 0;
@@ -478,14 +442,12 @@ input[disabled] {
 
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0; }
 
 input[type="search"] {
   -moz-appearance: textfield;
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
   box-sizing: content-box; }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -546,7 +508,6 @@ textarea {
 
   @page {
     margin: 0.5cm; }
-
   p,
   h2,
   h3 {
@@ -562,8 +523,7 @@ textarea {
 .alignnone {
   margin: 0 1.5em 1.5em 0; }
 
-.aligncenter,
-div.aligncenter {
+.aligncenter, div.aligncenter {
   display: block;
   margin: 0 auto; }
 
@@ -792,3 +752,5 @@ a img.aligncenter {
  /*------------------------------------*\
     $THEMES
 \*------------------------------------*/
+
+/*# sourceMappingURL=ie.css.map */
