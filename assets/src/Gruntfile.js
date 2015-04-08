@@ -48,9 +48,10 @@ module.exports = function(grunt) {
         },
 
         cssmin: {
-            '../css/min/main.min.css': ['../css/main.css'],
-            '../css/min/ie.min.css': ['../css/ie.css']
-
+            files: {
+                '../css/min/main.min.css': ['../css/main.css'],
+                '../css/min/ie.min.css': ['../css/ie.css']
+            }
         },
 
         uglify: {
@@ -85,7 +86,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-css');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-autoprefixer');
 
     // Register task(s)
