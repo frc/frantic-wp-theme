@@ -55,7 +55,11 @@ add_filter('menu_order', 'custom_menu_order');
     add_action( 'admin_menu', 'customize_admin_menu', 9999 );
     function customize_admin_menu() {
 
-        // Allow access to these pages only to @frantic.com users
+        /*
+         * For: Allow access to these pages only to @frantic.com users
+         * Debug: echo '<pre>' . print_r( $GLOBALS[ 'menu' ], TRUE) . '</pre>';
+         *  - Look for [2] and use remove_menu_page()
+        */
         if ( ! strpos( get_userdata( get_current_user_id() )->user_email, 'frantic.com' ) ) {
 
             // Hide Advanced Custom Fields
@@ -79,6 +83,9 @@ add_filter('menu_order', 'custom_menu_order');
 
             // Hide Tools
             remove_menu_page( 'tools.php' );
+
+            // Hide AWS plugin
+            remove_menu_page( 'amazon-web-services' );
 
         }
 
