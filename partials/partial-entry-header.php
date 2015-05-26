@@ -1,6 +1,6 @@
 <?php
 /*
- * Partial template for display entry headers
+ * Partial template for displaying entry headers
  */
 ?>
 
