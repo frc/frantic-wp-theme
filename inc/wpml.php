@@ -27,7 +27,7 @@
 	}
 
 /**
- * Removes WPML's translation queue from subscribers
+ * Remove WPML's translation queue from subscribers
  */
 	add_action( 'admin_menu', 'remove_wpml_admin_menu_entries', 9999 );
 	function remove_wpml_admin_menu_entries() {
@@ -38,6 +38,7 @@
 
 /**
  * Remove WPML's Multilingual Content Setup metabox
+ *
  * @link http://codex.wordpress.org/Function_Reference/remove_meta_box
  */
 	add_action( 'admin_head', 'remove_wpml_metaboxes' );

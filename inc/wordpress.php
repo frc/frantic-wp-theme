@@ -108,6 +108,7 @@
 	/**
 	 * Dashboard widgets
 	 * Use 'dashboard-network' as the second parameter to remove widgets from a network dashboard.
+	 *
 	 * @link http://codex.wordpress.org/Function_Reference/remove_meta_box
 	 */
 		add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
@@ -200,7 +201,7 @@
 
 	/**
 	 * Rearrange default metaboxes
-	 * Use 'dashboard-network' as the second parameter to remove widgets from a network dashboard.
+	 *
 	 * @link http://wordpress.stackexchange.com/a/103924
 	 */
 		add_action( 'user_register', 'set_user_metaboxes' );

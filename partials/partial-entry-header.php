@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Partial template for displaying entry headers
  */
 ?>

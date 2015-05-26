@@ -28,12 +28,14 @@ if ( ! function_exists( 'theme_setup' ) ) :
 
 	/**
 	 * Set custom image sizes
+	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_image_size
 	 */
 	#	add_image_size( 'featured-image', 1280, 350, array('center', 'center') );
 
 	/**
 	 * Add custom styles to TinyMCE
+	 *
 	 * @link http://codex.wordpress.org/TinyMCE_Custom_Styles
 	 */
 	/*
@@ -96,6 +98,7 @@ if ( ! function_exists( 'theme_setup' ) ) :
 
 	/**
 	 * Enable excerpts for pages
+	 *
 	 * @link http://codex.wordpress.org/Excerpt
 	 */
 		add_action( 'init', 'add_page_excerpt_support' );

@@ -7,6 +7,7 @@
 
 	/**
 	 * Force users to login
+	 *
 	 * @link https://gist.github.com/richardmtl/a3b7a93131aaeb405990
 	 */
 		if ( strtolower( getenv('WP_DEV') ) === 'true' ) add_action( 'init', 'force_login' );

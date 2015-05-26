@@ -19,6 +19,7 @@
 
 	/**
 	 * Remove height and width attributes from images
+	 *
 	 * @link http://css-tricks.com/snippets/wordpress/remove-width-and-height-attributes-from-inserted-images/
 	 */
 		add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
@@ -30,6 +31,7 @@
 
 	/**
 	 * Remove links from images by default
+	 *
 	 * @link http://andrewnorcross.com/tutorials/stop-hyperlinking-images/
 	 */
 		add_action( 'admin_init', 'remove_image_links', 10 );
