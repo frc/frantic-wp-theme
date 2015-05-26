@@ -1,0 +1,54 @@
+/**
+ * Parses CSS and adds vendor-prefixed CSS properties using the Can I Use database
+ * @link https://github.com/nDmitry/grunt-autoprefixer
+ */
+
+	module.exports = {
+
+		admin: {
+			options: {
+				browsers: ['<%= config.theme.browser_support %>'],
+				cascade: true,
+				safe: true
+			},
+			src: '<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.admin %>'
+		},
+
+		editor: {
+			options: {
+				browsers: ['<%= config.theme.browser_support %>'],
+				cascade: true,
+				safe: true
+			},
+			src: '<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.editor %>'
+		},
+
+		login: {
+			options: {
+				browsers: ['<%= config.theme.browser_support %>'],
+				cascade: true,
+				safe: true
+			},
+			src: '<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.login %>'
+		},
+
+		main: {
+			options: {
+				browsers: ['<%= config.theme.browser_support %>'],
+				cascade: true
+			},
+			files: {
+				'<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.main %>': '<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.main %>',
+				'<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.main_min %>': '<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.main_min %>',
+			}
+		},
+
+		print: {
+			options: {
+				browsers: ['<%= config.theme.browser_support %>'],
+				cascade: true
+			},
+			src: '<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.print %>'
+		}
+
+	};
