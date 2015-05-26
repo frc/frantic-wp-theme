@@ -1,5 +1,5 @@
-var App = window.App || {};
+(function( window, document, $ ) {
 
-App.main = (function(window, document, $) {
+	console.log("Hello from _frc theme");
 
-}(this, this.document, jQuery));
+})( this.window, this.document, jQuery );
