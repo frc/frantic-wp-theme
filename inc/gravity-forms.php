@@ -21,7 +21,7 @@
 	/*
 		add_action( 'admin_init', 'gf_additional_user_roles' );
 		function gf_additional_user_roles() {
-			$role = get_role('editor');
-			$role->add_cap('gform_full_access');
+			$role = get_role( 'editor' );
+			$role->add_cap( 'gform_full_access' );
 		}
 	*/

@@ -100,53 +100,52 @@
 	/**
 	 * Remove admin bar from subscribers
 	 */
-		if ( ! current_user_can('edit_posts') ) {
+		if ( ! current_user_can( 'edit_posts' ) ) {
 			show_admin_bar( false );
 			add_filter( 'show_admin_bar', '__return_false' );
 		}
 
 	/**
-	 * Dashboard widgets
-	 * Use 'dashboard-network' as the second parameter to remove widgets from a network dashboard.
-	 *
+	 * Remove Dashboard widgets
+	 * Use 'dashboard-network' to remove widgets from a network dashboard.
 	 * @link http://codex.wordpress.org/Function_Reference/remove_meta_box
 	 */
 		add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
 		function remove_dashboard_widgets() {
 
 			// Right Now
-			# remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
+			# remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
 
 			// Recent Comments
-			remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+			remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
 
 			// Incoming Links
-			remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');
+			remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
 
 			// Plugins
-			remove_meta_box('dashboard_plugins', 'dashboard', 'normal');
+			remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
 
 			// Quick Press
-			remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+			remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
 
 			// Recent Drafts
-			remove_meta_box('dashboard_recent_drafts', 'dashboard', 'side');
+			remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
 
 			// Remove WordPress news for all other user except @frantic.com
 			if ( ! strpos( get_userdata( get_current_user_id() )->user_email, 'frantic.com' ) ) {
 
 				// WordPress blog
-				remove_meta_box('dashboard_primary', 'dashboard', 'side');
+				remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
 
 				// Other WordPress News
-				remove_meta_box('dashboard_secondary', 'dashboard', 'side');
+				remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
 
 			}
 		}
 
 	/**
 	 * Remove metaboxes
-	 * Use 'dashboard-network' as the second parameter to remove widgets from a network dashboard.
+	 * Use 'dashboard-network' to remove widgets from a network dashboard.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/remove_meta_box
 	 */
@@ -156,46 +155,46 @@
 			$screen = get_current_screen();
 
 			// Author metabox
-			remove_meta_box('authordiv', $screen->post_type, 'normal');
+			remove_meta_box( 'authordiv', $screen->post_type, 'normal' );
 
 			// Categories metabox
-			# remove_meta_box('categorydiv', $screen->post_type, 'normal');
+			# remove_meta_box( 'categorydiv', $screen->post_type, 'normal' );
 
 			// Comments status metabox (discussion)
-			remove_meta_box('commentstatusdiv', $screen->post_type, 'normal');
+			remove_meta_box( 'commentstatusdiv', $screen->post_type, 'normal' );
 
 			// Comments metabox
-			remove_meta_box('commentsdiv', $screen->post_type, 'normal');
+			remove_meta_box( 'commentsdiv', $screen->post_type, 'normal' );
 
 			// Formats metabox
-			remove_meta_box('formatdiv', $screen->post_type, 'normal');
+			remove_meta_box( 'formatdiv', $screen->post_type, 'normal' );
 
 			// Attributes metabox
-			# remove_meta_box('pageparentdiv', $screen->post_type, 'normal');
+			# remove_meta_box( 'pageparentdiv', $screen->post_type, 'normal' );
 
 			// Custom fields metabox
-			remove_meta_box('postcustom', $screen->post_type, 'normal');
+			remove_meta_box( 'postcustom', $screen->post_type, 'normal' );
 
 			// Excerpt metabox
-			# remove_meta_box('postexcerpt', $screen->post_type, 'normal');
+			# remove_meta_box( 'postexcerpt', $screen->post_type, 'normal' );
 
 			// Featured image metabox
-			# remove_meta_box('postimagediv', $screen->post_type, 'normal');
+			# remove_meta_box( 'postimagediv', $screen->post_type, 'normal' );
 
 			// Revisions metabox
-			# remove_meta_box('revisionsdiv', $screen->post_type, 'normal');
+			# remove_meta_box( 'revisionsdiv', $screen->post_type, 'normal' );
 
 			// Slug metabox
-			remove_meta_box('slugdiv', $screen->post_type, 'normal');
+			remove_meta_box( 'slugdiv', $screen->post_type, 'normal' );
 
 			// Date, status, and update/save metabox
-			# remove_meta_box('submitdiv', $screen->post_type, 'normal');
+			# remove_meta_box( 'submitdiv', $screen->post_type, 'normal' );
 
 			// Tags metabox
-			remove_meta_box('tagsdiv-post_tag', $screen->post_type, 'normal');
+			remove_meta_box( 'tagsdiv-post_tag', $screen->post_type, 'normal' );
 
 			// Trackbacks metabox
-			remove_meta_box('trackbacksdiv', $screen->post_type, 'normal');
+			remove_meta_box( 'trackbacksdiv', $screen->post_type, 'normal' );
 
 		}
 

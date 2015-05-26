@@ -39,7 +39,7 @@ if ( ! function_exists( 'theme_setup' ) ) :
 	 * @link http://codex.wordpress.org/TinyMCE_Custom_Styles
 	 */
 	/*
-		if ( ! function_exists('theme_mce_before_init') ) {
+		if ( ! function_exists( 'theme_mce_before_init' ) ) {
 			add_filter( 'tiny_mce_before_init', 'theme_mce_before_init' );
 			function theme_mce_before_init( $settings ) {
 

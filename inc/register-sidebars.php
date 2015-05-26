@@ -8,7 +8,7 @@
  * @package _frc
  */
 
-if ( ! function_exists('theme_widgets_init') ) :
+if ( ! function_exists( 'theme_widgets_init' ) ) :
 
 	add_action( 'widgets_init', 'theme_widgets_init' );
 	function theme_widgets_init() {

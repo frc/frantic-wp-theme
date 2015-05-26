@@ -38,6 +38,6 @@
 		function remove_image_links() {
 			$image_set = get_option( 'image_default_link_type' );
 			if ( $image_set !== 'none' ) {
-				update_option('image_default_link_type', 'none');
+				update_option( 'image_default_link_type', 'none' );
 			}
 		}

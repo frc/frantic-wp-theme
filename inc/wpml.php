@@ -31,7 +31,7 @@
  */
 	add_action( 'admin_menu', 'remove_wpml_admin_menu_entries', 9999 );
 	function remove_wpml_admin_menu_entries() {
-		if ( ! current_user_can('edit_posts') ) {
+		if ( ! current_user_can( 'edit_posts' ) ) {
 			remove_menu_page( 'wpml-translation-management/menu/translations-queue.php' );
 		}
 	}

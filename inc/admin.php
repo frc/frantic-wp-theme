@@ -10,7 +10,7 @@
 	 *
 	 * @link https://gist.github.com/richardmtl/a3b7a93131aaeb405990
 	 */
-		if ( strtolower( getenv('WP_DEV') ) === 'true' ) add_action( 'init', 'force_login' );
+		if ( strtolower( getenv( 'WP_DEV' ) ) === 'true' ) add_action( 'init', 'force_login' );
 		function force_login() {
 
 			if ( is_user_logged_in() ) return;
@@ -34,7 +34,7 @@
 	 * Actions to be taken in DEVELOPMENT
 	 * Useful for development and staging enviroments
 	 */
-		if ( strtolower( getenv('WP_DEV') ) === 'true' ) {
+		if ( strtolower( getenv( 'WP_DEV' ) ) === 'true' ) {
 
 		/**
 		 * Show current instance in the Admin Bar

@@ -55,7 +55,7 @@
 	/**
 	 * Only in development
 	 */
-		if ( strtolower( getenv('WP_DEV') ) === 'true' ) {
+		if ( strtolower( getenv( 'WP_DEV' ) ) === 'true' ) {
 			wp_enqueue_style( 'theme-style', get_bloginfo( 'stylesheet_directory' ) . '/assets/css/main.css', false, filemtime( get_stylesheet_directory() . '/assets/css/main.css' ), 'all' );
 			wp_enqueue_script( 'theme-js', get_bloginfo( 'stylesheet_directory' ) . '/assets/js/main.js', 'plugins', filemtime( get_stylesheet_directory() . '/assets/js/main.js' ), true );
 

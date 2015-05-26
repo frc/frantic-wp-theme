@@ -8,7 +8,7 @@
  * @package _frc
  */
 
-if ( ! function_exists('theme_taxonomies') ) :
+if ( ! function_exists( 'theme_taxonomies' ) ) :
 
 	add_action( 'init', 'theme_taxonomies', 0 );
 	function theme_taxonomies() {

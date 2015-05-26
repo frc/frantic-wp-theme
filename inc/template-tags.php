@@ -12,7 +12,7 @@
  * @link https://core.trac.wordpress.org/browser/tags/4.1.1/src/wp-includes/post-template.php#L501
  */
 	add_filter( 'body_class', 'theme_body_classes', 10, 2 );
-	if ( ! function_exists('theme_body_classes') ) {
+	if ( ! function_exists( 'theme_body_classes' ) ) {
 		function theme_body_classes( $wp_classes = array(), $extra_classes = array() ) {
 
 			global $post;
