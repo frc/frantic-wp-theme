@@ -37,10 +37,7 @@
 				browsers: ['<%= config.theme.browser_support %>'],
 				cascade: true
 			},
-			files: {
-				'<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.main %>': '<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.main %>',
-				'<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.main_min %>': '<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.main_min %>',
-			}
+			src: '<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.main %>'
 		},
 
 		print: {

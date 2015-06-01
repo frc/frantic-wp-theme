@@ -19,15 +19,13 @@
 				"admin"        : "admin.css",
 				"editor"       : "editor-style.css",
 				"login"        : "login.css",
-				"main"         : "main.css",
-				"main_min"     : "main.min.css",
+				"main"         : "main.min.css",
 				"print"        : "print.css"
 			},
 
 			"js" : {
 				"location"     : "../js",
-				"main"         : "main.js",
-				"main_min"     : "main.min.js"
+				"main"         : "main.min.js"
 			}
 
 		},

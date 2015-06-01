@@ -17,7 +17,7 @@
 				preserveComments: false
 			},
 			files: {
-				'<%= config.theme.assets.js.location %>/<%= config.theme.assets.js.main_min %>': '<%= config.theme.source.js.location %>/<%= config.theme.source.js.main %>'
+				'<%= config.theme.assets.js.location %>/<%= config.theme.assets.js.main %>': '<%= config.theme.source.js.location %>/<%= config.theme.source.js.main %>'
 			}
 		}
 

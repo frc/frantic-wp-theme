@@ -30,21 +30,11 @@
 
 		main: {
 			options: {
-				style: 'compact',
-				precision: 15
-			},
-			files: {
-				'<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.main %>': '<%= config.theme.source.sass.location %>/<%= config.theme.source.sass.main %>'
-			}
-		},
-
-		main_min: {
-			options: {
 				style: 'compressed',
 				precision: 15
 			},
 			files: {
-				'<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.main_min %>': '<%= config.theme.source.sass.location %>/<%= config.theme.source.sass.main %>'
+				'<%= config.theme.assets.css.location %>/<%= config.theme.assets.css.main %>': '<%= config.theme.source.sass.location %>/<%= config.theme.source.sass.main %>'
 			}
 		},
 
