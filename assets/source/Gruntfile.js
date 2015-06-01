@@ -17,7 +17,7 @@ module.exports = function ( grunt ) {
 		data: {
 
 			// Load themes
-			config: grunt.file.readJSON('theme.json'),
+			config: grunt.file.readJSON('grunt-config.json'),
 
 		},
 
