@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _frc 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-26 16:12+0300\n"
+"POT-Creation-Date: 2015-06-01 15:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,15 +28,15 @@ msgid ""
 "below or a search?"
 msgstr ""
 
-#: ../.././assets/src/node_modules/grunt-pot/test/fixtures/some-file.php:3
+#: ../.././assets/source/node_modules/grunt-pot/test/fixtures/some-file.php:3
 msgid "I'm a translatable string."
 msgstr ""
 
-#: ../.././assets/src/node_modules/grunt-pot/test/fixtures/some-other-file.php:4
+#: ../.././assets/source/node_modules/grunt-pot/test/fixtures/some-other-file.php:4
 msgid "Me too"
 msgstr ""
 
-#: ../.././assets/src/node_modules/grunt-pot/test/fixtures/some-other-file.php:7
+#: ../.././assets/source/node_modules/grunt-pot/test/fixtures/some-other-file.php:7
 #, php-format
 msgid "I have %d apple"
 msgid_plural "I have %d apples"
@@ -44,7 +44,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. / TRANSLATORS: This should be translated as a shorthand for YEAR-MONTH-DAY using 4, 2 and 2 digits.
-#: ../.././assets/src/node_modules/grunt-pot/test/fixtures/some-other-file.php:16
+#: ../.././assets/source/node_modules/grunt-pot/test/fixtures/some-other-file.php:16
 msgid "yyyy-mm-dd"
 msgstr ""
 
@@ -77,7 +77,7 @@ msgctxt "Text for menu toggle button on mobile"
 msgid "Menu"
 msgstr ""
 
-#: ../.././inc/admin.php:72
+#: ../.././inc/admin.php:73
 msgid ""
 "<strong>Note:</strong> You are about to login to a development environment"
 msgstr ""
@@ -236,7 +236,7 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: ../.././inc/theme-setup.php:126
+#: ../.././inc/theme-setup.php:129
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
