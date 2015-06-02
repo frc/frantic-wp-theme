@@ -7,10 +7,10 @@
  * @package _frc
  */
 
-	add_action( 'edit_category', 'theme_transient_flusher' );
-	add_action( 'edit_term', 'theme_transient_flusher' );
-	add_action( 'save_post', 'theme_transient_flusher' );
-	add_action( 'wp_update_nav_menu', 'theme_transient_flusher' );
+add_action( 'edit_category', 'theme_transient_flusher' );
+add_action( 'edit_term', 'theme_transient_flusher' );
+add_action( 'save_post', 'theme_transient_flusher' );
+add_action( 'wp_update_nav_menu', 'theme_transient_flusher' );
 function theme_transient_flusher() {
 
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) { return; }
@@ -36,4 +36,4 @@ function theme_transient_flusher() {
 			}
 		}
 	}
-}
+*/

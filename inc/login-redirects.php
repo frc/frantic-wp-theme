@@ -9,7 +9,8 @@
  *
  * @package _frc
  */
-	add_filter( 'login_redirect', 'subscriber_login_redirect', 10, 3 );
+
+add_filter( 'login_redirect', 'subscriber_login_redirect', 10, 3 );
 function subscriber_login_redirect( $redirect_to, $request, $user ) {
 
 	global $user;

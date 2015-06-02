@@ -8,7 +8,7 @@
  * @package _frc
  */
 
-	register_nav_menus( array(
-		'header' => esc_html__( 'Header navigation', '_frc' ),
-		'footer' => esc_html__( 'Footer navigation', '_frc' ),
-	) );
+register_nav_menus( array(
+	'header' => esc_html__( 'Header navigation', '_frc' ),
+	'footer' => esc_html__( 'Footer navigation', '_frc' ),
+) );

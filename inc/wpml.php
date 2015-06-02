@@ -9,7 +9,7 @@
  * Remove general WPML features
  */
 
-	add_action( 'init', 'remove_wpml_features' );
+add_action( 'init', 'remove_wpml_features' );
 function remove_wpml_features() {
 
 	global $sitepress;
@@ -29,7 +29,8 @@ function remove_wpml_features() {
 /**
  * Remove WPML's translation queue from subscribers
  */
-	add_action( 'admin_menu', 'remove_wpml_admin_menu_entries', 9999 );
+
+add_action( 'admin_menu', 'remove_wpml_admin_menu_entries', 9999 );
 function remove_wpml_admin_menu_entries() {
 	if ( ! current_user_can( 'edit_posts' ) ) {
 		remove_menu_page( 'wpml-translation-management/menu/translations-queue.php' );
@@ -41,7 +42,8 @@ function remove_wpml_admin_menu_entries() {
  *
  * @link http://codex.wordpress.org/Function_Reference/remove_meta_box
  */
-	add_action( 'admin_head', 'remove_wpml_metaboxes' );
+
+add_action( 'admin_head', 'remove_wpml_metaboxes' );
 function remove_wpml_metaboxes() {
 	$screen = get_current_screen();
 	remove_meta_box( 'icl_div_config', $screen->post_type, 'normal' );

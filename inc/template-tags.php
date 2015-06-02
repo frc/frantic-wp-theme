@@ -11,8 +11,9 @@
  * @link http://codex.wordpress.org/Function_Reference/body_class
  * @link https://core.trac.wordpress.org/browser/tags/4.1.1/src/wp-includes/post-template.php#L501
  */
-	add_filter( 'body_class', 'theme_body_classes', 10, 2 );
-if ( ! function_exists( 'theme_body_classes' ) ) {
+
+add_filter( 'body_class', 'theme_body_classes', 10, 2 );
+if ( ! function_exists( 'theme_body_classes' ) ) :
 	function theme_body_classes( $wp_classes = array(), $extra_classes = array() ) {
 
 		global $post;
@@ -58,11 +59,11 @@ if ( ! function_exists( 'theme_body_classes' ) ) {
 		}
 
 		// Custom classes we want to add
-		if ( get_post_type() && ! is_attachment() && ! is_search() ) { array_push( $extra_classes, 'post-type-' . sanitize_html_class( get_post_type() ) ); # [post-type]-[slug]
-		}		if ( is_page_template() ) { array_push( $extra_classes, 'template-' . sanitize_html_class( pathinfo( get_page_template() )['filename'] ) );  # template-[filename]
-		}		if ( is_front_page() ) { array_push( $extra_classes, 'template-front-page' ); # template-front-page
-		}		if ( is_home() ) { array_push( $extra_classes, 'template-blog' ); # template-blog
-		}
+		if ( get_post_type() && ! is_attachment() && ! is_search() ) { array_push( $extra_classes, 'post-type-' . sanitize_html_class( get_post_type() ) ); } # [post-type]-[slug]
+		if ( is_page_template() ) { array_push( $extra_classes, 'template-' . sanitize_html_class( pathinfo( get_page_template() )['filename'] ) ); } # template-[filename]
+		if ( is_front_page() ) { array_push( $extra_classes, 'template-front-page' ); } # template-front-page
+		if ( is_home() ) { array_push( $extra_classes, 'template-blog' ); } # template-blog
+
 		// Remove non-whitelisted classes
 		$wp_classes = array_intersect( $wp_classes, $whitelist );
 
@@ -74,10 +75,11 @@ if ( ! function_exists( 'theme_body_classes' ) ) {
 		return $theme_classes;
 
 	}
-}
+
+endif;
 
 if ( ! function_exists( 'theme_posted_on' ) ) :
-	/**
+/**
  * Prints HTML with meta information for the current post-date/time and author.
  */
 	function theme_posted_on() {
@@ -108,10 +110,11 @@ if ( ! function_exists( 'theme_posted_on' ) ) :
 		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK
 
 	}
+
 endif;
 
 if ( ! function_exists( 'theme_categorized_blog' ) ) :
-	/**
+/**
  * Returns true if a blog has more than 1 category.
  *
  * @return bool
@@ -136,10 +139,11 @@ if ( ! function_exists( 'theme_categorized_blog' ) ) :
 		// This blog has only 1 category so theme_categorized_blog should return false.
 		else { return false; }
 	}
+
 endif;
 
 if ( ! function_exists( 'theme_entry_footer' ) ) :
-	/**
+/**
  * Prints HTML with meta information for the categories, tags and comments.
  */
 	function theme_entry_footer() {
@@ -168,10 +172,11 @@ if ( ! function_exists( 'theme_entry_footer' ) ) :
 
 		edit_post_link( esc_html__( 'Edit', '_frc' ), '<span class="edit-link">', '</span>' );
 	}
+
 endif;
 
 if ( ! function_exists( 'theme_archive_title' ) ) :
-	/**
+/**
  * Shim for `theme_archive_title()`.
  *
  * Display the archive title based on the queried object.
@@ -233,4 +238,5 @@ if ( ! function_exists( 'theme_archive_title' ) ) :
 			echo $before . $title . $after;  // WPCS: XSS OK
 		}
 	}
+
 endif;

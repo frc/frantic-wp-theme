@@ -5,7 +5,7 @@
  * @package _frc
  */
 
-	add_action( 'init', 'remove_wordpress_features' );
+add_action( 'init', 'remove_wordpress_features' );
 function remove_wordpress_features() {
 
 	// Remove RSS feeds
@@ -33,84 +33,87 @@ function remove_wordpress_features() {
 
 }
 
-	/**
-	 * Disable XMLRPC functionalities
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/bloginfo
-	 * @link http://codex.wordpress.org/Plugin_API/Action_Reference/wp
-	 * @link https://developer.wordpress.org/reference/hooks/wp_headers/
-	 * @link https://developer.wordpress.org/reference/hooks/xmlrpc_call/
-	 * @link https://developer.wordpress.org/reference/hooks/xmlrpc_enabled/
-	 * @link https://developer.wordpress.org/reference/hooks/xmlrpc_methods/
-	 */
+/**
+ * Disable XMLRPC functionalities
+ *
+ * @link http://codex.wordpress.org/Function_Reference/bloginfo
+ * @link http://codex.wordpress.org/Plugin_API/Action_Reference/wp
+ * @link https://developer.wordpress.org/reference/hooks/wp_headers/
+ * @link https://developer.wordpress.org/reference/hooks/xmlrpc_call/
+ * @link https://developer.wordpress.org/reference/hooks/xmlrpc_enabled/
+ * @link https://developer.wordpress.org/reference/hooks/xmlrpc_methods/
+ */
 
-		// Disable XMLRPC completely
-		# add_filter( 'xmlrpc_enabled', '__return_false' );
+// Disable XMLRPC completely
+# add_filter( 'xmlrpc_enabled', '__return_false' );
 
-		// Disable X-Pingback HTTP Header
-		add_filter( 'wp_headers', 'disable_pingback_header', 11, 2 );
+// Disable X-Pingback HTTP Header
+add_filter( 'wp_headers', 'disable_pingback_header', 11, 2 );
 function disable_pingback_header( $headers, $wp_query ) {
 	if ( isset( $headers['X-Pingback'] ) ) { unset( $headers['X-Pingback'] ); }
 	return $headers;
 }
 
-		// Hijack pingback_url for get_bloginfo (<link rel="pingback" />)
-		add_filter( 'bloginfo_url', 'disable_pingback_url', 11, 2 );
+// Hijack pingback_url for get_bloginfo (<link rel="pingback" />)
+add_filter( 'bloginfo_url', 'disable_pingback_url', 11, 2 );
 function disable_pingback_url( $output, $property ) {
 	return ( $property == 'pingback_url' ) ? null : $output;
 }
 
-		// Remove Pingback method
-		add_filter( 'xmlrpc_methods', 'remove_xmlrpc_pingback_ping' );
+// Remove Pingback method
+add_filter( 'xmlrpc_methods', 'remove_xmlrpc_pingback_ping' );
 function remove_xmlrpc_pingback_ping( $methods ) {
 	unset( $methods['pingback.ping'] );
 	return $methods;
 }
 
-		// Remove rsd_link from filters (<link rel="EditURI" />)
-		add_action( 'wp', 'disable_rsd_link', 9 );
+// Remove rsd_link from filters (<link rel="EditURI" />)
+add_action( 'wp', 'disable_rsd_link', 9 );
 function disable_rsd_link() {
 	remove_action( 'wp_head', 'rsd_link' );
 }
 
-		// Disable specific XMLRPC calls
-		add_action( 'xmlrpc_call', function( $method ) {
-			switch ( $method ) {
+// Disable specific XMLRPC calls
+add_action( 'xmlrpc_call', function( $method ) {
+	switch ( $method ) {
 
-				case 'pingback.ping':
-					wp_die(
-						'Pingback functionality is disabled on this site',
-						'Pingback disabled', array( 'response' => 403 )
-					);
-					break;
+		case 'pingback.ping':
+			wp_die(
+				'Pingback functionality is disabled on this site',
+				'Pingback disabled', array( 'response' => 403 )
+			);
+			break;
 
-				default:
-					return;
-			}
-		});
+		default:
+			return;
+	}
+});
 
-		/**
-	 * Removes Update Core message from Dashboard
-	 */
-		add_action( 'admin_menu', 'hide_wordpress_update_notices' );
+/**
+ * Removes Update Core message from Dashboard
+ */
+
+add_action( 'admin_menu', 'hide_wordpress_update_notices' );
 function hide_wordpress_update_notices() {
 	remove_action( 'admin_notices', 'update_nag', 3 );
 }
 
-		/**
-	 * Remove admin bar from subscribers
-	 */
+/**
+ * Remove admin bar from subscribers
+ */
+
 if ( ! current_user_can( 'edit_posts' ) ) {
 	show_admin_bar( false );
 	add_filter( 'show_admin_bar', '__return_false' );
 }
 
-		/**
-	 * Remove Dashboard widgets
-	 * Use 'dashboard-network' to remove widgets from a network dashboard.
-	 * @link http://codex.wordpress.org/Function_Reference/remove_meta_box
-	 */
-		add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
+/**
+ * Remove Dashboard widgets
+ * Use 'dashboard-network' to remove widgets from a network dashboard.
+ * @link http://codex.wordpress.org/Function_Reference/remove_meta_box
+ */
+
+add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
 function remove_dashboard_widgets() {
 
 	// Right Now
@@ -143,13 +146,14 @@ function remove_dashboard_widgets() {
 	}
 }
 
-		/**
-	 * Remove metaboxes
-	 * Use 'dashboard-network' to remove widgets from a network dashboard.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/remove_meta_box
-	 */
-		add_action( 'admin_head', 'remove_metaboxes' );
+/**
+ * Remove metaboxes
+ * Use 'dashboard-network' to remove widgets from a network dashboard.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/remove_meta_box
+ */
+
+add_action( 'admin_head', 'remove_metaboxes' );
 function remove_metaboxes() {
 
 	$screen = get_current_screen();
@@ -198,13 +202,14 @@ function remove_metaboxes() {
 
 }
 
-		/**
-	 * Rearrange default metaboxes
-	 *
-	 * @link http://wordpress.stackexchange.com/a/103924
-	 */
-		add_action( 'user_register', 'set_user_metaboxes' );
-		add_action( 'admin_init', 'set_user_metaboxes' );
+/**
+ * Rearrange default metaboxes
+ *
+ * @link http://wordpress.stackexchange.com/a/103924
+ */
+
+add_action( 'user_register', 'set_user_metaboxes' );
+add_action( 'admin_init', 'set_user_metaboxes' );
 function set_user_metaboxes( $user_id = null ) {
 
 	// Apply to all post formats
