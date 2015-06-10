@@ -10,12 +10,12 @@
  */
 	require get_template_directory() . '/inc/theme-setup.php';
 	require get_template_directory() . '/inc/theme-assets.php';
-	require get_template_directory() . '/inc/admin.php';
+	require get_template_directory() . '/inc/admin-features.php';
 	# require get_template_directory() . '/inc/customizer.php';
 	# require get_template_directory() . '/inc/localize-js.php';
 	require get_template_directory() . '/inc/login-redirects.php';
 	require get_template_directory() . '/inc/template-tags.php';
-	require get_template_directory() . '/inc/wordpress.php';
+	require get_template_directory() . '/inc/clean-wordpress.php';
 
 /**
  * Register custom elements
