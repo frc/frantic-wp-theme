@@ -90,7 +90,18 @@ add_action( 'xmlrpc_call', function( $method ) {
 });
 
 /**
- * Removes Update Core message from Dashboard
+ * Remove customize link from admin bar
+ *
+ * @link wordpress.org/support/topic/customize-in-admin-bar-is-not-welcome-_-
+ */
+
+add_action( 'admin_bar_menu', 'remove_customize', 999 );
+function remove_customize( $wp_admin_bar ) {
+	$wp_admin_bar->remove_node( 'customize' );
+}
+
+/**
+ * Remove Update Core message from Dashboard
  */
 
 add_action( 'admin_menu', 'hide_wordpress_update_notices' );
