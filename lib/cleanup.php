@@ -54,4 +54,15 @@ add_action('the_generator', 'remove_version_info');
 
 /*define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);*/
 
+
+/**
+ * Remove customize link from admin bar
+ *
+ * @link https://wordpress.org/support/topic/customize-in-admin-bar-is-not-welcome-_-
+ */
+add_action( 'admin_bar_menu', 'remove_customize', 999 );
+function remove_customize( $wp_admin_bar ) {
+    $wp_admin_bar->remove_node( 'customize' );
+}
+
 ?>
