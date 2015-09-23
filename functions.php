@@ -24,7 +24,7 @@ add_theme_support('html5', array('comment-list', 'comment-form', 'search-form'))
 // If you have Articles in use on your site,
 // enable this to allow widgets to show.
 if ( function_exists('register_sidebar') ) {
-	register_sidebar(array(id=>'sidebar-1'));
+	register_sidebar(array('id'=>'sidebar-1'));
 }
 
 
