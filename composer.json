@@ -1,0 +1,8 @@
+{
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.example.org"
+        }
+    ]
+}
