@@ -1,8 +1,7 @@
 {
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://packages.example.org"
-        }
-    ]
+  "name": "frc/Frantic-WP-theme",
+  "type": "library",
+  "require": {
+    "php": ">=5.3"
+  }
 }
