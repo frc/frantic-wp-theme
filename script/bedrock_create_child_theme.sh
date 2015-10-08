@@ -6,7 +6,6 @@
 create_theme() {
     echo "creating"
     read -r -p "Write the name for your theme: " response
-    echo $response
 
     echo "Create directory $response in $THEME_DIR"
     mkdir $THEME_DIR/$response
