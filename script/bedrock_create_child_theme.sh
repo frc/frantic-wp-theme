@@ -24,10 +24,14 @@ EOF
 <?php
 ?>
 EOF
-    # In OSX make sure to install imagemagick with --with-fontconfig flag
-    convert -background black -size 600x450 -fill "#FF69B4" \
-        -pointsize 72 -gravity center label:$response \
-        $THEME_DIR/$response/screenshot.png > /dev/null 2>&1
+    if which convert >/dev/null; then
+        # In OSX make sure to install imagemagick with --with-fontconfig flag
+        convert -background black -size 600x450 -fill "#FF69B4" \
+            -pointsize 72 -gravity center label:$response \
+            $THEME_DIR/$response/screenshot.png > /dev/null 2>&1
+    else
+        echo "Remember to put a nice screenshot"
+    fi
 }
 
 THEME_DIR=web/app/themes
