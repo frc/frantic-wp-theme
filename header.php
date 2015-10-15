@@ -3,7 +3,15 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?php wp_title(''); ?></title>
+    <title>
+        <?php
+            if ( is_home() || is_front_page() ) { 
+                bloginfo('name');
+            } else {
+                echo wp_title( ' | ', false, right ); bloginfo( 'name' );
+            }
+        ?>
+    </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
