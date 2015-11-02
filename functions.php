@@ -5,29 +5,22 @@
  * @package _frc
  */
 
+ /**
+  * Classes
+  */
+ 	require_once get_template_directory() . '/lib/class-transient-extensions.php';
+
 /**
  * Theme setup
  */
-	require get_template_directory() . '/inc/theme-setup.php';
-	require get_template_directory() . '/inc/theme-assets.php';
-	require get_template_directory() . '/inc/admin-features.php';
-	# require get_template_directory() . '/inc/customizer.php';
-	# require get_template_directory() . '/inc/localize-js.php';
-	require get_template_directory() . '/inc/login-redirects.php';
-	require get_template_directory() . '/inc/template-tags.php';
-	require get_template_directory() . '/inc/clean-wordpress.php';
-
-/**
- * Register custom elements
- */
-	require get_template_directory() . '/inc/register-navigation.php';
-	require get_template_directory() . '/inc/register-post-types.php';
-	require get_template_directory() . '/inc/register-sidebars.php';
-	require get_template_directory() . '/inc/register-taxonomies.php';
+	require_once get_template_directory() . '/inc/customizer.php';
+	require_once get_template_directory() . '/inc/template-tags.php';
+	require_once get_template_directory() . '/inc/compatibility-wordpress.php';
 
 /**
  * Plugins
  */
-	# require get_template_directory() . '/inc/acf.php';
-	# require get_template_directory() . '/inc/gravity-forms.php';
-	# require get_template_directory() . '/inc/wpml.php';
+	if ( function_exists( 'icl_object_id' ) ) {
+		require_once get_template_directory() . '/inc/compatibility-wpml.php';
+	}
+

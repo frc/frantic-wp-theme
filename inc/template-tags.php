@@ -12,8 +12,9 @@
  * @link https://core.trac.wordpress.org/browser/tags/4.1.1/src/wp-includes/post-template.php#L501
  */
 
-add_filter( 'body_class', 'theme_body_classes', 10, 2 );
-if ( ! function_exists( 'theme_body_classes' ) ) :
+ if ( ! function_exists( 'theme_body_classes' ) ) :
+
+	add_filter( 'body_class', 'theme_body_classes', 10, 2 );
 	function theme_body_classes( $wp_classes = array(), $extra_classes = array() ) {
 
 		global $post;
@@ -61,8 +62,8 @@ if ( ! function_exists( 'theme_body_classes' ) ) :
 		// Custom classes we want to add
 		if ( get_post_type() && ! is_attachment() && ! is_search() ) { array_push( $extra_classes, 'post-type-' . sanitize_html_class( get_post_type() ) ); } # [post-type]-[slug]
 		if ( is_page_template() ) { array_push( $extra_classes, 'template-' . sanitize_html_class( pathinfo( get_page_template() )['filename'] ) ); } # template-[filename]
-		if ( is_front_page() ) { array_push( $extra_classes, 'template-front-page' ); } # template-front-page
-		if ( is_home() ) { array_push( $extra_classes, 'template-blog' ); } # template-blog
+		if ( is_front_page() ) { array_push( $extra_classes, 'template-front-page' ); }
+		if ( is_home() ) { array_push( $extra_classes, 'template-home' ); }
 
 		// Remove non-whitelisted classes
 		$wp_classes = array_intersect( $wp_classes, $whitelist );
@@ -109,68 +110,6 @@ if ( ! function_exists( 'theme_posted_on' ) ) :
 
 		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK
 
-	}
-
-endif;
-
-if ( ! function_exists( 'theme_categorized_blog' ) ) :
-/**
- * Returns true if a blog has more than 1 category.
- *
- * @return bool
- */
-	function theme_categorized_blog() {
-
-		// Create an array of all the categories that are attached to posts.
-		$categories = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
-
-		// Count the number of categories that are attached to the posts.
-		$categories = count( $categories );
-
-		// This blog has more than 1 category so theme_categorized_blog should return true.
-		if ( $categories > 1 ) { return true; }
-
-		// This blog has only 1 category so theme_categorized_blog should return false.
-		else { return false; }
-	}
-
-endif;
-
-if ( ! function_exists( 'theme_entry_footer' ) ) :
-/**
- * Prints HTML with meta information for the categories, tags and comments.
- */
-	function theme_entry_footer() {
-
-		// Hide category and tag text for pages.
-		if ( get_post_type() === 'post' ) {
-
-			$categories_list = get_the_category_list( esc_html__( ', ', '_frc' ) );
-
-			if ( $categories_list && theme_categorized_blog() ) {
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_frc' ) . '</span>', $categories_list ); // WPCS: XSS OK
-			}
-
-			$tags_list = get_the_tag_list( '', esc_html__( ', ', '_frc' ) );
-
-			if ( $tags_list ) {
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_frc' ) . '</span>', $tags_list ); // WPCS: XSS OK
-			}
-		}
-
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link( esc_html__( 'Leave a comment', '_frc' ), esc_html__( '1 Comment', '_frc' ), esc_html__( '% Comments', '_frc' ) );
-			echo '</span>';
-		}
-
-		edit_post_link( esc_html__( 'Edit', '_frc' ), '<span class="edit-link">', '</span>' );
 	}
 
 endif;

@@ -2,6 +2,7 @@
 /**
  * _frc Theme Customizer
  *
+ * @link https://codex.wordpress.org/Theme_Customization_API
  * @package _frc
  */
 
@@ -11,8 +12,12 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object
  */
 
-add_action( 'customize_register', 'theme_customize_register' );
-function theme_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-}
+if ( ! function_exists( 'theme_customize_register' ) ) :
+
+	add_action( 'customize_register', 'theme_customize_register' );
+	function theme_customize_register( $wp_customize ) {
+		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	}
+
+endif;
