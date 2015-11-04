@@ -17,7 +17,7 @@ if ( ! function_exists( 'theme_entry_footer' ) ) :
 
 			$categories_list = get_the_category_list( esc_html__( ', ', '_frc' ) );
 
-			if ( $categories_list && theme_categorized_blog() ) {
+			if ( $categories_list ) {
 				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_frc' ) . '</span>', $categories_list ); // WPCS: XSS OK
 			}
 
@@ -84,7 +84,7 @@ if ( ! function_exists( 'theme_entry_footer' ) ) :
 
 			$categories_list = get_the_category_list( esc_html__( ', ', '_frc' ) );
 
-			if ( $categories_list && theme_categorized_blog() ) {
+			if ( $categories_list ) {
 				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_frc' ) . '</span>', $categories_list ); // WPCS: XSS OK
 			}
 
