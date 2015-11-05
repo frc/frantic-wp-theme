@@ -24,7 +24,7 @@ if ( ! function_exists( 'theme_setup' ) ) :
 	 * If you're building a theme based on _frc, use a find and replace
 	 * to change '_frc' to the name of your theme in all the template files
 	 */
-		load_theme_textdomain( '_frc', get_template_directory() . '/languages' );
+		load_theme_textdomain( '_frc', get_stylesheet_directory() . '/languages' );
 
 	/**
 	 * Set custom image sizes
