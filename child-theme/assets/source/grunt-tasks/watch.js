@@ -14,13 +14,13 @@
 			tasks: [
 				'scsslint',
 				'sass:admin',
-				'autoprefixer:admin'
+				'postcss:admin'
 			]
 		},
 
 		editor_style: {
 			files: [ '<%= config.theme.source.sass.location %>/<%= config.theme.source.sass.editor_style %>' ],
-			tasks: [ 'sass:editor', 'autoprefixer:editor' ]
+			tasks: [ 'sass:editor', 'postcss:editor' ]
 		},
 
 		main_css: {
@@ -31,7 +31,7 @@
 			tasks: [
 				'scsslint',
 				'sass:main',
-				'autoprefixer:main',
+				'postcss:main',
 			]
 		},
 
@@ -50,7 +50,7 @@
 			tasks: [
 				'scsslint',
 				'sass:print',
-				'autoprefixer:print',
+				'postcss:print',
 			]
 		},
 

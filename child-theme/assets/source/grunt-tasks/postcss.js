@@ -1,6 +1,6 @@
 /**
  * Parses CSS and adds vendor-prefixed CSS properties using the Can I Use database
- * @link https://github.com/nDmitry/grunt-autoprefixer
+ * @link https://github.com/nDmitry/grunt-postcss
  */
 
 	module.exports = {
