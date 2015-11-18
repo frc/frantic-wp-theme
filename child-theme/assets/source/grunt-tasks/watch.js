@@ -18,8 +18,8 @@
 			]
 		},
 
-		editor_style: {
-			files: [ '<%= config.theme.source.sass.location %>/<%= config.theme.source.sass.editor_style %>' ],
+		editor: {
+			files: [ '<%= config.theme.source.sass.location %>/<%= config.theme.source.sass.editor %>' ],
 			tasks: [ 'sass:editor', 'postcss:editor' ]
 		},
 
