@@ -30,6 +30,8 @@ module.exports = function ( grunt ) {
 
 					"location"         : "../../.",
 
+					"browser_support"  : "last 3 versions",
+
 					"assets" : {
 
 						"css" : {

@@ -5,7 +5,7 @@
 		"po2mo",
 		"scsslint",
 		"sass",
-		"postcss",
+		"autoprefixer",
 		"jshint",
 		"uglify",
 		"notify",
