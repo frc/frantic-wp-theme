@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
         <?php
-            if ( is_home() || is_front_page() ) { 
+            if ( is_home() || is_front_page() ) {
                 bloginfo('name');
             } else {
-                echo wp_title( ' | ', false, right ); bloginfo( 'name' );
+                echo wp_title( ' | ', false, 'right' ); bloginfo( 'name' );
             }
         ?>
     </title>
