@@ -6,6 +6,7 @@
 !.csslintrc
 !.jshintrc
 !.scss-lint.yml
+!.editorconfig
 
 ## Temporary files
 *~
