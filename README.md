@@ -8,6 +8,8 @@ This theme has been modified to include useful functions suited for Frantic's ne
 Getting Started
 ===============
 
+* Clone this repository to Frantic-WP-Theme directory
+* Move `child-directory` outside the parent theme directory
 * Search for: `'_frc'` and replace with: `'theme-name'`
 * Search for: `Text Domain: _frc` in **sass/style.scss** and replace with: `Text Domain: theme-name`
 * Search for: ` _frc` and replace with: ` Theme Name`
