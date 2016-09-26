@@ -212,7 +212,8 @@ function remove_dashboard_meta() {
     remove_meta_box( 'yasr_users_dashboard_widget',          'dashboard', 'side'   );  // Yet another star rating: "Your Ratings"
     remove_meta_box( 'yasr_widget_log_dashboard',            'dashboard', 'side'   );  // Yet another star rating: "Recent Ratings"
 //  remove_meta_box( 'woocommerce_dashboard_status',         'dashboard', 'normal' );  // WooCommerce: "WooCommerce Status" 
-    remove_meta_box( 'woocommerce_dashboard_recent_reviews', 'dashboard', 'normal' );
+    remove_meta_box( 'woocommerce_dashboard_recent_reviews', 'dashboard', 'normal' );  // WooCommerce: "WooCommerce Recent Reviews"
+    remove_meta_box( 'sendgrid_statistics_widget',           'dashboard', 'core'   );  // SendGrid WordPress Statistics
 }
 add_action( 'admin_init', 'remove_dashboard_meta' );
 
