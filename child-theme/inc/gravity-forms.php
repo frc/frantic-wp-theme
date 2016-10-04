@@ -26,3 +26,13 @@ function gf_additional_user_roles() {
 	$role->add_cap( 'gform_full_access' );
 }
 */
+/**
+ * Automatically add honeypot field for all newly created forms
+ */
+add_action( 'gform_after_save_form', 'add_honeypot', 10, 2 );
+function add_honeypot( $form, $is_new ) {
+	if ( $is_new ) {
+		$form['enableHoneypot'] = true;
+		GFAPI::update_form( $form );
+	}
+}
