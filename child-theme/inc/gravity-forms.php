@@ -33,6 +33,7 @@ add_action( 'gform_after_save_form', 'add_honeypot', 10, 2 );
 function add_honeypot( $form, $is_new ) {
 	if ( $is_new ) {
 		$form['enableHoneypot'] = true;
+		$form['is_active'] = true; // This is needed because $form object doesn't contain the info, and GFAPI will turn form inactive automatically if it's not present ¯\_(ツ)_/¯ http://inlinedocs.gravityhelp.com/source-class-GFAPI.html#209 
 		GFAPI::update_form( $form );
 	}
 }
