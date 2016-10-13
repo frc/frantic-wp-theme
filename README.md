@@ -10,7 +10,7 @@ This can be used for branding in CSS, PHP and JS - Use client's name or Frantic'
 * Image converter: http://www.glassgiant.com/ascii/
 * Text based generator: http://www.network-science.de/ascii/
 
-### ImageOtim
+### ImageOptim
 ImageOptim optimizes images — so they take up less disk space and load faster — by finding best compression parameters and by removing unnecessary comments and color profiles. It handles PNG, JPEG and GIF animations. Fixes PNG transparency issues for older browsers as well.
 * Download: http://imageoptim.com/
 
