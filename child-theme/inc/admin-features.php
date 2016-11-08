@@ -189,3 +189,38 @@ function remove_dashboard_menus() {
 
 	}
 }
+
+/**
+ * Remove un-used dashboard widgets
+ *
+ * @link https://codex.wordpress.org/Dashboard_Widgets_API
+ */
+
+function remove_dashboard_meta() {
+    remove_meta_box( 'dashboard_incoming_links',             'dashboard', 'normal' );  // WordPress: ""
+    remove_meta_box( 'dashboard_plugins',                    'dashboard', 'normal' );  // WordPress: ""
+    remove_meta_box( 'dashboard_primary',                    'dashboard', 'side'   );  // WordPress: "WordPress-uutisia"
+    remove_meta_box( 'dashboard_secondary',                  'dashboard', 'normal' );  // WordPress: ""
+    remove_meta_box( 'dashboard_quick_press',                'dashboard', 'side'   );  // WordPress: "Nopea luonnos"
+    remove_meta_box( 'dashboard_recent_drafts',              'dashboard', 'side'   );  // WordPress: ""
+    remove_meta_box( 'dashboard_recent_comments',            'dashboard', 'normal' );  // WordPress: ""
+//  remove_meta_box( 'dashboard_right_now',                  'dashboard', 'normal' );  // WordPress: "Sivustosi sisällöt lyhyesti"
+//  remove_meta_box( 'dashboard_activity',                   'dashboard', 'normal' );  // WordPress: "Aktiviteetti"  //since 3.8
+    remove_meta_box( 'bbp-dashboard-right-now',              'dashboard', 'core'   );  // bbPress: "Right Now in Forums"
+    remove_meta_box( 'rg_forms_dashboard',                   'dashboard', 'side'   );  // GravityForms: "Forms"
+    remove_meta_box( 'wpseo-dashboard-overview',             'dashboard', 'side'   );  // Yoast: "SEO Posts Overview"
+    remove_meta_box( 'yasr_users_dashboard_widget',          'dashboard', 'side'   );  // Yet another star rating: "Your Ratings"
+    remove_meta_box( 'yasr_widget_log_dashboard',            'dashboard', 'side'   );  // Yet another star rating: "Recent Ratings"
+//  remove_meta_box( 'woocommerce_dashboard_status',         'dashboard', 'normal' );  // WooCommerce: "WooCommerce Status" 
+    remove_meta_box( 'woocommerce_dashboard_recent_reviews', 'dashboard', 'normal' );  // WooCommerce: "WooCommerce Recent Reviews"
+    remove_meta_box( 'sendgrid_statistics_widget',           'dashboard', 'core'   );  // SendGrid WordPress Statistics
+}
+add_action( 'admin_init', 'remove_dashboard_meta' );
+
+/**
+ * Remove "Welcome to WordPress"-dashboard widget
+ *
+ * @link https://codex.wordpress.org/Plugin_API/Action_Reference/welcome_panel
+ */
+
+remove_action('welcome_panel', 'wp_welcome_panel');
