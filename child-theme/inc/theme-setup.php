@@ -132,6 +132,14 @@ if ( ! function_exists( 'theme_setup' ) ) :
 			) . '</a>';
 		}
 
+	/**
+	 * Bypass the gravity forms secure link generation, because of the S3 integration.
+	 *
+	 * @link https://www.gravityhelp.com/documentation/article/gform_secure_file_download_location/
+	 */
+		add_filter('gform_secure_file_download_location', function ($secure_download_location, $file, $this) {
+		    return false;
+		}, 10, 3);
 	}
 
 endif;
