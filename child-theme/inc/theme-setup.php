@@ -137,7 +137,7 @@ if ( ! function_exists( 'theme_setup' ) ) :
 	 *
 	 * @link https://www.gravityhelp.com/documentation/article/gform_secure_file_download_location/
 	 */
-		add_filter('gform_secure_file_download_location', function ($secure_download_location, $file, $this) {
+		add_filter('gform_secure_file_download_location', function ($secure_download_location, $file, $field) {
 		    return false;
 		}, 10, 3);
 	}
