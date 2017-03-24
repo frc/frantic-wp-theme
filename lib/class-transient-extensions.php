@@ -5,7 +5,6 @@
  * @link http://codex.wordpress.org/Transients_API
  *
  * @package _frc
- * @package Algol
  */
 
 class TransientExtensions {

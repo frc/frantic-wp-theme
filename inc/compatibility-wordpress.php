@@ -5,10 +5,10 @@
  * @package _frc
  */
 
- if ( ! function_exists( 'remove_wordpress_features' ) ) :
+ if ( ! function_exists( 'frc_remove_wordpress_features' ) ) :
 
-	 add_action( 'init', 'remove_wordpress_features' );
-	 function remove_wordpress_features() {
+	 add_action( 'init', 'frc_remove_wordpress_features' );
+	 function frc_remove_wordpress_features() {
 
 	 	// Remove RSS feeds
 	 	# remove_action( 'wp_head', 'feed_links', 2 );
@@ -82,16 +82,16 @@
 	  *
 	  * @link wordpress.org/support/topic/customize-in-admin-bar-is-not-welcome-_-
 	  */
-	 add_action( 'admin_bar_menu', 'remove_customize', 999 );
-	 function remove_customize( $wp_admin_bar ) {
+	 add_action( 'admin_bar_menu', 'frc_remove_customize', 999 );
+	 function frc_remove_customize( $wp_admin_bar ) {
 	 	$wp_admin_bar->remove_node( 'customize' );
 	 }
 
 	 /**
 	  * Remove Update Core message from Dashboard
 	  */
-	 add_action( 'admin_menu', 'hide_wordpress_update_notices' );
-	 function hide_wordpress_update_notices() {
+	 add_action( 'admin_menu', 'frc_hide_wordpress_update_notices' );
+	 function frc_hide_wordpress_update_notices() {
 	 	remove_action( 'admin_notices', 'update_nag', 3 );
 	 }
 
@@ -110,28 +110,28 @@
 	 # add_filter( 'xmlrpc_enabled', '__return_false' );
 
 	 // Disable X-Pingback HTTP Header
-	 add_filter( 'wp_headers', 'disable_pingback_header', 11, 2 );
-	 function disable_pingback_header( $headers, $wp_query ) {
+	 add_filter( 'wp_headers', 'frc_disable_pingback_header', 11, 2 );
+	 function frc_disable_pingback_header( $headers, $wp_query ) {
 	 	if ( isset( $headers['X-Pingback'] ) ) { unset( $headers['X-Pingback'] ); }
 	 	return $headers;
 	 }
 
 	 // Hijack pingback_url for get_bloginfo (<link rel="pingback" />)
-	 add_filter( 'bloginfo_url', 'disable_pingback_url', 11, 2 );
-	 function disable_pingback_url( $output, $property ) {
+	 add_filter( 'bloginfo_url', 'frc_disable_pingback_url', 11, 2 );
+	 function frc_disable_pingback_url( $output, $property ) {
 	 	return ( $property == 'pingback_url' ) ? null : $output;
 	 }
 
 	 // Remove Pingback method
-	 add_filter( 'xmlrpc_methods', 'remove_xmlrpc_pingback_ping' );
-	 function remove_xmlrpc_pingback_ping( $methods ) {
+	 add_filter( 'xmlrpc_methods', 'frc_remove_xmlrpc_pingback_ping' );
+	 function frc_remove_xmlrpc_pingback_ping( $methods ) {
 	 	unset( $methods['pingback.ping'] );
 	 	return $methods;
 	 }
 
 	 // Remove rsd_link from filters (<link rel="EditURI" />)
-	 add_action( 'wp', 'disable_rsd_link', 9 );
-	 function disable_rsd_link() {
+	 add_action( 'wp', 'frc_disable_rsd_link', 9 );
+	 function frc_disable_rsd_link() {
 	 	remove_action( 'wp_head', 'rsd_link' );
 	 }
 

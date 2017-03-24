@@ -5,10 +5,10 @@
  * @package _frc
  */
 
- if ( ! function_exists( 'remove_wpml_features' ) ) :
+ if ( ! function_exists( 'frc_remove_wpml_features' ) ) :
 
-	 add_action( 'init', 'remove_wpml_features' );
-	 function remove_wpml_features() {
+	 add_action( 'init', 'frc_remove_wpml_features' );
+	 function frc_remove_wpml_features() {
 
 	 	global $sitepress;
 
@@ -43,8 +43,8 @@
 	  *
 	  * @link http://codex.wordpress.org/Function_Reference/remove_meta_box
 	  */
-	 	add_action( 'admin_head', 'remove_wpml_metaboxes' );
-	 	function remove_wpml_metaboxes() {
+	 	add_action( 'admin_head', 'frc_remove_wpml_metaboxes' );
+	 	function frc_remove_wpml_metaboxes() {
 	 		$screen = get_current_screen();
 	 		remove_meta_box( 'icl_div_config', $screen->post_type, 'normal' );
 	 	}

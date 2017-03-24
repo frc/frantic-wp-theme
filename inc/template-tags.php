@@ -12,10 +12,10 @@
  * @link https://core.trac.wordpress.org/browser/tags/4.1.1/src/wp-includes/post-template.php#L501
  */
 
- if ( ! function_exists( 'theme_body_classes' ) ) :
+ if ( ! function_exists( 'frc_theme_body_classes' ) ) :
 
-	add_filter( 'body_class', 'theme_body_classes', 10, 2 );
-	function theme_body_classes( $wp_classes = array(), $extra_classes = array() ) {
+	add_filter( 'body_class', 'frc_theme_body_classes', 10, 2 );
+	function frc_theme_body_classes( $wp_classes = array(), $extra_classes = array() ) {
 
 		global $post;
 
@@ -79,11 +79,11 @@
 
 endif;
 
-if ( ! function_exists( 'theme_posted_on' ) ) :
+if ( ! function_exists( 'frc_theme_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-	function theme_posted_on() {
+	function frc_theme_posted_on() {
 
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
@@ -114,7 +114,7 @@ if ( ! function_exists( 'theme_posted_on' ) ) :
 
 endif;
 
-if ( ! function_exists( 'theme_archive_title' ) ) :
+if ( ! function_exists( 'frc_theme_archive_title' ) ) :
 /**
  * Shim for `theme_archive_title()`.
  *
@@ -123,7 +123,7 @@ if ( ! function_exists( 'theme_archive_title' ) ) :
  * @param string $before Optional. Content to prepend to the title. Default empty.
  * @param string $after  Optional. Content to append to the title. Default empty.
  */
-	function theme_archive_title( $before = '', $after = '' ) {
+	function frc_theme_archive_title( $before = '', $after = '' ) {
 		if ( is_category() ) {
 			$title = sprintf( esc_html__( 'Category: %s', '_frc' ), single_cat_title( '', false ) );
 		} elseif ( is_tag() ) {
