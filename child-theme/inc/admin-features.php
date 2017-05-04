@@ -15,6 +15,10 @@ function force_login() {
 
 	if ( is_user_logged_in() ) { return; }
 
+	if (defined('WP_CLI')) {
+		return;
+	}
+
 	// List of pages that will not be blocked
 	$exclusions = array(
 		'import-csv',
