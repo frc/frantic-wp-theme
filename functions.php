@@ -1,26 +1,30 @@
 <?php
 /**
- * _frc functions and theme setup
+ * _frc parent theme setup
  *
  * @package _frc
  */
 
- /**
-  * Classes
-  */
- 	require_once get_template_directory() . '/lib/class-transient-extensions.php';
-
 /**
  * Theme setup
  */
-	require_once get_template_directory() . '/inc/customizer.php';
-	require_once get_template_directory() . '/inc/template-tags.php';
-	require_once get_template_directory() . '/inc/compatibility-wordpress.php';
+require_once get_template_directory() . '/inc/setup/theme-setup.php';
+
+/**
+ * Admin setup
+ */
+require_once get_template_directory() . '/inc/admin/dev-environment.php';
+
+/**
+ * Cleanup
+ */
+require_once get_template_directory() . '/inc/cleanup/general.php';
+require_once get_template_directory() . '/inc/cleanup/emojis.php';
+require_once get_template_directory() . '/inc/cleanup/update-checks.php';
+require_once get_template_directory() . '/inc/cleanup/xmlrpc.php';
 
 /**
  * Plugins
  */
-	if ( function_exists( 'icl_object_id' ) ) {
-		require_once get_template_directory() . '/inc/compatibility-wpml.php';
-	}
-
+require_once get_template_directory() . '/inc/plugins/tinymce.php';
+require_once get_template_directory() . '/inc/plugins/gforms.php';
