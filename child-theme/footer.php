@@ -8,7 +8,7 @@
  */
 ?>
 
-	</div>
+	</div> <!-- // site-content -->
 
 	<footer class="site-footer" role="contentinfo">
 		<div class="site-branding">
@@ -19,4 +19,4 @@
 <?php wp_footer(); ?>
 
 </body>
-</html><!-- FRANTIC SERVER STATUS: OK -->
+</html><?php if ((getenv('WP_DEV') == false || strtolower(getenv('WP_DEV') !== 'true')) && getenv('WP_ENV') != 'production'){ ?><!-- FRANTIC SERVER STATUS: OK --><?php } ?>

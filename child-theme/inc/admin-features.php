@@ -34,6 +34,13 @@ function force_login() {
 	auth_redirect();
 }
 
+if ((getenv('WP_DEV') == false || strtolower(getenv('WP_DEV') !== 'true')) && getenv('WP_ENV') != 'production') {
+    add_filter('login_message', 'development_message');
+    function development_message($message) {
+        return '<p class="message" style="border-left: 4px solid #FFBA00;">' . wp_kses(__('<strong>Note:</strong> You are about to login to a development environment', '_frc'), 'strong') . '</p>';
+    }
+}
+
 /**
  * Actions to be taken in DEVELOPMENT
  * Useful for development and staging enviroments
