@@ -5,7 +5,6 @@
  *
  * Add WP_DEV = true to envs
  */
-var_dump($_SERVER['PHP_SELF']);
 if (strtolower(getenv('WP_DEV') === 'true' )) {
 
     /**
