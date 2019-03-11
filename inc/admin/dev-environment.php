@@ -5,7 +5,7 @@
  *
  * Add WP_DEV = true to envs
  */
-
+var_dump($_SERVER['PHP_SELF']);
 if (strtolower(getenv('WP_DEV') === 'true' )) {
 
     /**
@@ -32,7 +32,7 @@ if (strtolower(getenv('WP_DEV') === 'true' )) {
                 'xmlrpc.php'
             ];
 
-            if (in_array(basename($_SERVER['PHP_SELF']), apply_filters('frc_force_login', 'frc_force_login_exlusions', $exclusions))) {
+            if (in_array(basename($_SERVER['PHP_SELF']), apply_filters('frc_force_login', $exclusions))) {
                 return;
             }
 
