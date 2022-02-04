@@ -1,5 +1,5 @@
 {
-  "name": "frc/Frantic-WP-theme",
+  "name": "frc/frantic-wp-theme",
   "type": "wordpress-theme",
   "require": {
     "php": ">=5.3"
